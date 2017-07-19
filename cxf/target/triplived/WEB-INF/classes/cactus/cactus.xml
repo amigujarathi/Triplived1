@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cactus>
+    <js>
+        <needles>
+        	<!--  
+        		Image Upload js 
+        	-->
+        	<needle>
+        		<output>js/jquery-file-upload-min.js</output>
+        		<files>
+					<file>static/js/jquery/image-upload/jquery.ui.widget.js</file>
+					<file>static/js/jquery/image-upload/tmpl.min.js</file>
+					<file>static/js/jquery/image-upload/load-image.all.min.js</file>
+					<file>static/js/jquery/image-upload/canvas-to-blob.min.js</file>
+					<file>static/js/jquery/image-upload/jquery.blueimp-gallery.min.js</file>
+					<file>static/js/jquery/image-upload/jquery.iframe-transport.js</file>
+					<file>static/js/jquery/image-upload/jquery.fileupload.js</file>
+					<file>static/js/jquery/image-upload/jquery.fileupload-process.js</file>
+					<file>static/js/jquery/image-upload/jquery.fileupload-image.js</file>
+					<file>static/js/jquery/image-upload/jquery.fileupload-audio.js</file>
+					<file>static/js/jquery/image-upload/jquery.fileupload-video.js</file>
+					<file>static/js/jquery/image-upload/jquery.fileupload-validate.js</file>
+					<file>static/js/jquery/image-upload/jquery.fileupload-ui.js</file>
+					
+				</files>	
+        	</needle>
+        	
+        	<!-- 
+        			TWITTER'S BOOTSTRAP JAVASCRIPT
+        	 -->
+        	<needle>
+        		<output>js/twiter-min.js</output>
+        		<files>
+        			<!--  Twiters js -->
+					<!-- <file>static/js/twiter/js/bootstrap.js</file>  -->           
+					<file>static/js/twiter/typeahead/typeahead.min.js</file>
+					<file>static/js/twiter/template/hogan-2.0.0.js</file>
+					<file>static/js/twiter/datepicker/bootstrap-datepicker.js</file>
+					<file>static/js/twiter/image/holder.js</file>
+        		</files>
+        	</needle>
+        	
+        	
+        	<!--  EXTENDED SIGN UP JS -->
+             <needle>
+                <output>js/extended.min.js</output>
+                <files>
+				    <!--  Jquery min js -->
+					<!-- <file>static/m/js/jquery.c.min.js</file> -->
+					
+					<!--  Image Upload js ALREADY MINIFIED -->
+					<file>static/m/js/jquery-file-upload-min.js</file>
+					
+					<!--  Twiters js -->
+					<file>static/m/js/twiter-min.js</file>
+				
+					<!--  Local storage -->
+ 		<!-- 			<file>static/js/html5utils/store.min.js</file>
+					<file>static/js/html5utils/geo.js</file>  -->
+					
+					<!-- Validations -->
+					<file>static/js/jquery/validate/jquery.validate.js</file>
+					<file>static/js/jquery/validate/additional-methods.js</file>
+					
+					<!--
+						Custom java scripts 
+					 
+					 <file>static/js/connectme/activity/activity.js</file>
+					 <file>static/js/connectme/user/about-me.js</file>
+					 <file>static/js/connectme/user/address-info.js</file>
+					 <file>static/js/connectme/user/personal-info.js</file>
+					 <file>static/js/connectme/changepassword/changepassword.js</file>
+					 
+					 -->
+                </files>
+            </needle>
+            
+            
+                    	 <!--  Jquery js -->
+        	<needle>
+        		<output>js/jquery.c.min.js</output>
+        		<files>
+        			<!--  jquery js -->
+					<file>static/js/jquery/jquery-1.10.0.min.js</file>
+					<file>static/js/ui/jquery-ui.min.js</file> <!--  Do we need this to to to remove -->
+        		</files>
+        	</needle>
+        	
+            <needle>
+            	<output>js/index.min.js</output>
+            	<files>
+            		<!-- <file>static/js/twiter/js/bootstrap.js</file> -->
+					<!--  static/js/facebook/login.js   -->
+					<file>static/js/twiter/datepicker/bootstrap-datepicker.js</file>
+					<file>static/js/jquery/validate/jquery.validate.js</file>
+					<file>static/js/jquery/validate/additional-methods.js</file>
+					<file>static/js/connectme/login.js</file>
+            	</files>
+            </needle>
+            
+             <needle>
+            	<output>js/stadium-content.min.js</output>
+            	<files>
+					<file>static/js/stadium/stadiumDataEntry.js</file>	
+            	</files>
+			    </needle>
+			
+			
+				<needle>
+            	<output>interstify-search-results.min.js</output>
+            	
+            	<files>
+            		<!-- 
+            		replaced below files witn jquery.c.min.js
+            		 
+            			<file>static/js/jquery.min.js</file>
+            			<file>static/js/jquery-ui.min.js</file 
+            		-->
+            		
+            		
+            		<!-- <file>static/m/js/jquery.c.min.js</file> -->
+            		<!-- <file>static/js/twiter/js/bootstrap.js</file> -->
+            		
+					<!-- <file>static/js/add2bucket.js</file> -->
+					<file>static/js/jquery.timers-1.2.js</file>
+					<file>static/js/jquery.limit-1.2.source.js</file>
+					<!-- <file>static/js/jquery.galleryview.js</file> -->
+					
+					<file>static/js/twiter/typeahead/typeahead.min.js</file>
+					<file>static/js/twiter/template/hogan-2.0.0.js</file>
+					
+					<file>static/js/jquery/scroll/jquery.slimscroll.js</file>
+					
+					<file>static/js/angular-1.2.min.js</file>
+					<file>static/js/ng-infinite-scroll.min.js</file>
+					<file>static/js/ui-bootstrap-tpls-0.6.0.min.js</file>
+					
+					<!--  Local storage -->
+					<!-- <file>static/js/html5utils/store.min.js</file> -->
+					
+					<file>static/js/connectme/angular/search/module/projectModule.js</file>	
+					<file>static/js/connectme/angular/content/services/fewLocationServices.js</file>		
+					<file>static/js/connectme/angular/content/controllers/fewStadiumSectionController.js</file>
+					
+					<file>static/js/connectme/angular/search/controllers/site_angular.js</file>
+					<file>static/js/connectme/angular/search/services/site_angular_services.js</file>
+					
+					<file>static/js/connectme/angular/search/directive/search_listing_directives.js</file>
+					
+					<file>static/js/jquery.custom.js</file>
+					<file>static/js/twiter/select/bootstrap-select.js</file>
+					
+					
+					<!-- <file>static/js/html5utils/store.min.js</file>	 -->
+					
+					<!-- 
+						replaced below with file index.min.js
+					<file>static/js/twiter/datepicker/bootstrap-datepicker.js</file>
+					<file>static/js/jquery/validate/jquery.validate.js</file>
+					<file>static/js/jquery/validate/additional-methods.js</file>
+					<file>static/js/connectme/login.js</file> -->
+					
+					<file>static/m/js/index.min.js</file>
+					
+            	</files>
+            </needle>
+            
+            <needle>
+            	<output>interestify-messages.min.js</output>
+            	<files>
+					
+					<!-- <file>static/js/jquery.min.js</file>
+					<file>static/js/jquery-ui.min.js</file> -->
+					
+					<!-- <file>static/m/js/jquery.c.min.js</file> -->
+					
+					<file>static/js/jquery.timers-1.2.js</file>
+					<file>static/js/jquery.limit-1.2.source.js</file>
+					<file>static/js/jquery.galleryview.js</file>
+					
+					<!-- <file>static/js/twiter/js/bootstrap.js</file>  -->  <!--  TO DO to revisit as it may not be needed -->
+					<file>static/js/twiter/typeahead/typeahead.min.js</file>
+					<file>static/js/twiter/template/hogan-2.0.0.js</file>
+					
+					
+					<file>static/js/jquery/scroll/jquery.slimscroll.js</file>
+					
+					<file>static/js/angular.min.js</file>
+					<file>static/js/ng-infinite-scroll.min.js</file>
+					<file>static/js/ui-bootstrap-tpls-0.6.0.min.js</file>
+					
+					<!-- <file>static/js/html5utils/store.min.js</file> -->	
+					
+					<file>static/js/connectme/angular/message/controllers/absoluteMsgHistoryController.js</file>
+					<file>static/js/connectme/angular/event/controllers/eventController.js</file>
+					
+					
+					<file>static/js/connectme/angular/message/services/messageServices.js</file>
+					
+					<file>static/js/groupController.js</file>
+					
+					<!-- <file>static/js/html5utils/store.min.js</file> -->
+					
+					<!-- <link rel="stylesheet" type="text/css" href="${styles_url}/jquery.datetimepicker.css"/> -->
+					<file>static/js/jquery/dateTimePicker/jquery.datetimepicker.js</file>
+					
+					<file>static/js/jquery.custom.js</file>
+					
+            	</files>
+            </needle>
+            <needle>
+            	<output>interestify-geo.min.js</output>
+            	<files>
+            		<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false" ></script> -->
+					<file>static/js/html5utils/store.min.js</file>
+					<file>static/js/html5utils/geo.js</file> 
+            	</files>
+            </needle>
+            
+            <needle>
+            	<output>interestify-events.min.js</output>
+            	<files>
+            		<!-- <file>static/js/jquery.min.js</file>
+            		<file>static/js/jquery-ui.min.js</file> -->
+            		
+            		<!-- <file>static/m/js/jquery.c.min.js</file> -->
+            		
+					<file>static/js/jquery.timers-1.2.js</file>
+					<file>static/js/jquery.limit-1.2.source.js</file>
+					<file>static/js/jquery.galleryview.js</file> <!--  Is this really needed -->
+					<!-- <file>static/js/twiter/js/bootstrap.js</file> -->  <!--  To revisit this and move  -->
+					<file>static/js/twiter/typeahead/typeahead.min.js</file>
+					<file>static/js/twiter/template/hogan-2.0.0.js</file>
+					
+					
+					<file>static/js/jquery/scroll/jquery.slimscroll.js</file>
+					
+					<file>static/js/angular.min.js</file>
+					<file>static/js/ng-infinite-scroll.min.js</file>
+					<file>static/js/ui-bootstrap-tpls-0.6.0.min.js</file>
+					
+					<!--  Local storage -->
+					<!-- <file>static/js/html5utils/store.min.js</file>	 -->
+					
+					
+					<file>static/js/connectme/angular/message/controllers/absoluteMsgHistoryController.js</file>
+					<file>static/js/connectme/angular/event/controllers/eventListingController.js</file>
+					
+					<file>static/js/groupController.js</file>
+					
+					<!-- <file>static/js/html5utils/store.min.js</file> -->
+					<file>static/js/jquery.custom.js</file>
+            		
+            	</files>		
+            </needle>
+            <needle>
+            	<output>interestify-person-info.min.js</output>
+            	<files>
+            	
+					<file>static/js/angular-1.2.min.js</file>
+
+					<file>static/js/ng-infinite-scroll.min.js</file>
+					<file>static/js/ui-bootstrap-tpls-0.6.0.min.js</file>
+
+
+					<!-- <file>static/js/html5utils/store.min.js</file> -->
+					<file>static/js/connectme/angular/detail/personDetail/controllers/absolutePersonDetailController.js</file> 
+					<file>static/js/connectme/angular/detail/detailServices/pollerScript.js</file> 
+					<file>static/js/connectme/angular/detail/detailServices/detailServices.js</file>
+					<!-- <file>static/m/js/index.min.js</file> -->
+					
+            	</files>
+            </needle>
+        </needles>
+    </js>
+    
+    <!--  
+    		 CSS
+     -->
+      <css>
+        <needles>     
+        		<!--  
+        			COMMON CSS
+        		 -->  
+            <needle>
+                <output>css/common.min.css</output>
+                <files>
+                    <file>static/css/twiter/bootstrap.css</file>
+					<file>static/css/connectme/typeahead/typeahead.css</file>
+					<file>static/css/twiter/datepicker/datepicker.css</file> 
+                </files>
+            </needle>
+             
+             <!--  EXTENDED SIGN UP CSS -->
+             <needle>
+                <output>css/extended.min.css</output>
+                <files>
+                    <file>static/css/connectme/typeahead/typeahead.css</file>
+					<file>static/css/twiter/datepicker/datepicker.css</file> 
+					<file>static/css/connectme/extendedsignup.css</file>
+					<file>static/css/connectme/activity/activity.css</file>
+                </files>
+            </needle>
+            
+            <!-- ########## NEW NEDELLS ####################-->
+            <needle>
+                <output>css/interestify-bootstrap.css</output>
+                <files>
+                    <file>static/css/twiter/bootstrap.css</file>
+					<file>static/css/connectme/typeahead/typeahead.css</file>
+					<file>static/css/twiter/datepicker/datepicker.css</file> 
+                </files>
+            </needle>
+            
+            <needle>
+                <output>interestify-glyphicons.min.css</output>
+                <files>
+                    <file>static/raw/css/glyphicons_filetypes.css</file>
+					<file>static/raw/css/glyphicons_regular.css</file> 
+					<file>static/raw/css/glyphicons_social.css</file>
+					<file>static/raw/css/font-awesome.min.css</file>
+					<file>static/raw/css/picto.css</file>
+                </files>
+            </needle>
+            <!--  NEW NEDELLS -->
+        </needles>      
+    </css>
+    
+</cactus>
+
+

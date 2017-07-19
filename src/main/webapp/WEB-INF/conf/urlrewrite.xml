@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<outbound-rule>
+       <name>Strip URL Session ID's</name>
+       <note>
+           Strip ;jsession=XXX from urls passed through response.encodeURL().
+           The characters ? and # are the only things we can use to find out where the jsessionid ends.
+           The expression in 'from' below contains three capture groups, the last two being optional.
+               1, everything before ;jesessionid
+               2, everything after ;jesessionid=XXX starting with a ? (to get the query string) up to #
+               3, everything ;jesessionid=XXX and optionally ?XXX starting with a # (to get the target)
+           eg,
+	           from index.jsp;jsessionid=sss?qqq to index.jsp?qqq
+	           from index.jsp;jsessionid=sss?qqq#ttt to index.jsp?qqq#ttt
+	           from index.jsp;jsessionid=asdasdasdsadsadasd#dfds - index.jsp#dfds
+	           from u.jsp;jsessionid=wert.hg - u.jsp
+	           from /;jsessionid=tyu - /
+	           
+	           More Documentation
+	           http://urlrewritefilter.googlecode.com/svn/trunk/src/doc/manual/3.2/guide.html
+	           
+       </note>
+       <from>^(.*?)(?:\;jsessionid=[^\?#]*)?(\?[^#]*)?(#.*)?$</from>
+       <to>$1$2$3</to>
+   </outbound-rule>

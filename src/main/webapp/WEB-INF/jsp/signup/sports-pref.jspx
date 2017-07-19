@@ -1,0 +1,218 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+
+	<spring:eval expression="logged_in_user" var="user"></spring:eval>
+	
+	<style type="text/css">
+	
+	form#useractivityform label {
+		text-align: left;
+	}
+	
+	table tbody#user-intrested-activity a {
+		cursor: pointer;
+	}
+	
+	</style>
+	<c:set value="" var="emptyDesc" /> 
+	
+	<div>
+		<div class="row" style="padding-top: 10px;">
+			<div class="col-md-3">
+				<h4>&#160;</h4>
+			</div>
+			<div class="col-md-7 pull-right">
+				<span class="pull-right">
+					 <a  data-toggle="modal" id ="addactivity-href" href="#" class="btn btn-primary btn-md">Add an activity(s)</a>
+				</span>
+			</div>
+		</div>
+
+		<div class="activity">
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped table-hover">
+					<thead>
+						<tr>
+							<th width="9%">Activity</th>
+							<th width="9%">Level</th>
+							<th width="65%">Description</th>
+							<th width="15%">Action</th>
+						</tr>
+					</thead>
+					<tbody id="user-intrested-activity">
+						<tr><td colspan="4" class="progress-save">&#160;</td></tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/x-jquery-tmpl" id="activitycontent">
+ 			<tr id="\${id}">
+			    <td class='actname'>\${sportName}</td>
+			    <td class='level'>\${level}</td>
+			    <td class='desc'><textarea class="activity-desc form-control" disabled="disabled" rows="1" cols="87">\${description}</textarea> </td>
+			    <td class="action">	
+								 <a class="edit-activity"   id ="edit-\${id}">Edit</a>
+				 	<span class= "hidden" id = "cancel-span-\${id}"> &#160;|&#160;<a class="cancel-activity" id ="cancel-\${id}">Cancel</a> </span>
+					&#160;|&#160;<a class="delete-activity" id="del-\${id}">Delete</a>
+					<br/>
+					<span id="progress-save-\${id}">&#160;</span>
+				</td>
+			</tr>
+	  </script>
+	  	<script type="text/x-jquery-tmpl" id="noActivitycontent">
+ 			<tr id="no-activity-registered">
+			    <td colspan="4">\${msg}</td>
+			</tr>
+	  </script>
+	  <script type="text/x-jquery-tmpl" id="editActivitycontent">
+ 			<select class= "form-control" name='activitylevel'>
+				<option value="novice" >Novice</option>
+				<option value="intermediate">Intermediate</option>
+				<option value="expert">Expert</option>
+			</select>
+	  </script>
+	  
+ 
+			
+			<div class="modal fade" id="addactivity" tabindex="-1" role="dialog"  aria-hidden="true" style="display:none">
+			  <div class="modal-dialog">
+			  <form id ="useractivityform" name="useractivityform" action="/" method="post" class="form-horizontal" role="form"   >
+			    <div class="modal-content">
+			        <div class="modal-header">
+						<h3>Add an activity</h3>
+			        </div>
+			        <div class="modal-body activity">
+						 
+						 
+							<div id="form-section">
+								<!-- <div class="form-group">
+										<label class="col-sm-5 control-label" for="category">Select Category</label>
+										<div class="col-sm-7">
+											<select id="category" name="category" class = " form-control"><option value="">Select</option></select>
+											<label id="label-error-category" for="category" class="error" generated="true">&#160;</label>
+										</div>
+								</div> -->
+								<div class="form-group">
+									<label class="col-sm-5 control-label" for="activity">Search for an Interest</label>
+									<div class="col-sm-7">
+										<input   id="activity" class="typeahead form-control" type="text" value="" name="activity" tabindex="1" placeholder="Please search for an interest"      />
+										<input   id="activityId" type="hidden" value="" name="activityId"    />
+										<label id="label-error-activity" for="activity" class="error" generated="true">&#160;</label>
+									</div>
+								</div>
+				
+								<div class="form-group">
+										<label class="col-sm-5 control-label"><span>Select your experience level</span></label>
+										<div class="col-sm-7">	
+										    <div class="radio">
+												<label class="radio-custom checked">
+													<input value="novice" id = "novice" type="radio" name="activitylevel"/> 
+													<i class="fa fa-circle-o checked">&#160;</i> Novice
+												</label> 
+											</div>
+											 <div class="radio">
+												<label class="radio-custom checked">
+													<input value="intermediate" id = "intermediate" type="radio" name="activitylevel" /> 
+													<i class="fa fa-circle-o ">&#160;</i> Intermediate
+												</label> 
+											</div>
+											 <div class="radio">
+												<label class="radio-custom checked">
+													<input value="expert" id = "expert" type="radio" name="activitylevel" /> 
+													<i class="fa fa-circle-o ">&#160;</i> Expert
+												</label> 
+											</div>
+										    <label id="label-error-activitylevel" for="activitylevel" class="error" generated="true">&#160;</label>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-5 control-label"><span>A quick smart discription</span></label>
+									<div class="col-sm-7">
+										<textarea id = "activityDesc" class="form-control" name= "activityDesc"  rows="3" cols="67" >${emptyDesc}</textarea>
+										<label id="label-error-activitydesc" for="activity-desc" class="error" generated="true">&#160;</label>
+									</div>
+								</div>					 
+							</div>
+			        </div>
+			        
+					<div class="modal-footer">
+					    <button type="submit" class="btn btn-primary pull-left" id="add-activity" >Save</button>
+						<button class="btn btn-warning pull-left" id="cancel-add-activity" >Cancel</button>
+						 <span class="pull-left saveactivity" style="padding-top: 14px">&#160;</span>
+			        </div>
+			 		</div>
+			 		</form>	
+				</div>
+			</div> 
+			
+				<div class="modal fade" id="deleteActivity" tabindex="-1" role="dialog"  aria-hidden="true" style="display:none" >
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+				        <h4 class="modal-title">Confirm delete activity </h4>
+				      </div>
+				      <div class="modal-body">
+				        <p>Are your sure your want to remove <span id="del-act-name" style="font-weight: bold;">&#160;</span> from your profile </p>
+				        <input type="hidden" id ="del-act-id" name="del-act-id" value="" />
+				      </div>
+				      <div class="modal-footer">
+				        <button id="noDeleteActivity" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				        <button id="yesDeleteActivity" type="button" class="btn btn-primary">Confirm Delete</button>
+				      </div>
+				    </div><!-- /.modal-content -->
+				  </div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+			
+			<script type="text/x-jquery-tmpl" id="activitycontent">
+ 			<tr id="\${id}">
+			    <td class='actname'>\${sportName}</td>
+			    <td class='level'>\${level}</td>
+			    <td class='desc'><textarea class="activity-desc form-control" disabled="disabled" rows="1" cols="87">\${description}</textarea> </td>
+			    <td class="action">	
+								 <a class="edit-activity"   id ="edit-\${id}">Edit</a>
+				 	<span class= "hidden" id = "cancel-span-\${id}"> &#160;|&#160;<a class="cancel-activity" id ="cancel-\${id}">Cancel</a> </span>
+					&#160;|&#160;<a class="delete-activity" id="del-\${id}">Delete</a>
+					<br/>
+					<span id="progress-save-\${id}">&#160;</span>
+				</td>
+			</tr>
+	  </script>
+			
+			
+						<div id="activitypref" class="hidden">
+							<ul  data-tabs="tabs"  class="tabs nav nav-tabs">
+								<!-- FF/CC -->
+							</ul>
+						</div>
+						<div class="tab-content hidden" id="activityPrefContent" >
+							<!-- ff/CC -->
+						</div>
+			
+			<![CDATA[
+			<script type="text/x-jquery-tmpl" id="activityPreferecesBar">
+				<li class="glyphicons log_book" id={{= $data}}-li>
+					<a	id="{{= $data}}-ida" href="\#{{= $data}}-id" data-toggle="tab"><i>&#160;</i> {{= $data}} Preferences</a>
+				</li>
+	        </script>
+	        ]]>
+	        
+	        <![CDATA[
+	        <script type="text/x-jquery-tmpl" id="activityPreferecesContent">
+				<div class="tab-pane" id="{{= $data}}-id">
+					<h4>{{= $data}} Information 1</h4>
+						 hello {{= $data}} info here 
+				</div>
+	        </script> 
+	          ]]>
+			
+</jsp:root>

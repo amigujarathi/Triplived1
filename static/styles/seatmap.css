@@ -1,0 +1,140 @@
+/*---- Common-Sprite ----*/
+span.close,span.logo,a.available,a.selected,a.available2,a.available3,a.selected2,span.available,span.selected,span.booked,span.ladies,a.continue,a.booked,a.ladies,a.booked2,a.ladies2,a.booked3,a.ladies3,span.lower_case,span.upper_case,span.available_1,span.selected_1,span.booked_1,span.ladies_1,span.logo_1,a.selected3,span.arrow,.error_icon{ background:url(../images/bus_seat_map.png) no-repeat; font-size:0px; }
+	
+div.bus_seat p.heading{ padding-bottom:10px; border-bottom:2px solid #dddddd; margin-bottom:10px; }
+div.bus_seat p.heading span.text{ font-size:14px; color:#023688; font-weight:bold; }
+div.bus_seat p.heading a{ font-size:12px; color:#3f3f3f; text-decoration:none; }
+div.bus_seat p.heading span.text1{ margin:1px 8px 0 0; }
+div.bus_seat p.heading span.close{ background-position:0 0; width:15px; height:15px; }
+div.bus_seat p.terms{ font-size:10px; }
+
+/*---- Flight-Description ----*/
+ul.flight_description{ margin-bottom:10px; }
+ul.flight_description li{ display:inline; font-size:12px; color:#3f3f3f; margin-right:4px; }
+ul.flight_description li.seprator{ color:#c4c4c4; }
+
+/*---- Seat-Location ----*/
+div.seat_location{ border:1px solid #a4a4a4; background:#f5f5f5; margin-bottom:8px; }
+div.seat1 div.seat_location{ width:445px; padding:10px 15px 3px; }
+div.seat_location div.seat_case{ width:40px; }
+div.seat1 div.seat_location div.seats{ width:400px; }
+div.seat1 .sleepr{ margin-bottom:20px; }
+
+/*---- Seat-Case ----*/
+div.seat_case span.logo{ background-position:-19px 0; width:21px; height:22px; display:block; margin-bottom:20px; }
+div.seat_case span.logo_1{ background-position:-29px -126px; width:37px; height:39px; display:block; margin-bottom:20px; }
+div.seat_case span.lower_case{ background-position:0 -105px; width:11px; height:53px; display:block; margin-left:5px; }
+div.seat_case span.upper_case{ background-position:-15px -105px; width:11px; height:53px; display:block; margin-left:5px; margin-top:30px; }
+
+/*---- Seat-Map ----*/
+ul.seat_map{ margin-bottom:7px; }
+ul.seat_map li{ float:left; margin-right:10px; }
+ul.seat_map2 li{ margin-right:16px; }
+ul.seat_map li.last{ margin-right:0px; }
+ul.seat_map a{ text-decoration:none; }
+ul.seat_map a.available{ background-position:0 -24px; width:18px; height:17px; font-size:9px; color:#b2b1b1; padding:5px 0 0 6px; }
+ul.seat_map a.selected{ background-position:-26px -24px; width:19px; height:18px; font-size:11px; color:#000; padding:4px 0 0 5px; font-weight:bold; }
+ul.seat_map a.booked{ background-position:0px -48px; width:18px; height:17px; font-size:9px; color:#000; padding:5px 0 0 6px; }
+ul.seat_map a.ladies{ background-position:-26px -48px; width:18px; height:17px; font-size:9px; color:#000; padding:5px 0 0 6px; }
+ul.seat_map a.available2{ background-position:-108px 0; width:45px; height:33px; padding:8px 0 0 0; }
+ul.seat_map a.selected2{ background-position:-155px -0px; width:45px; height:33px; font-size:11px; color:#000; padding:8px 0 0 0;  font-weight:bold; }
+ul.seat_map a.booked2{ background-position:-155px -45px; width:45px; height:33px; padding:8px 0 0 0;  }
+ul.seat_map a.ladies2{ background-position:-108px -45px; width:45px; height:33px; padding:8px 0 0 0;  }
+ul.seat_map a.available3{ background-position:-108px -90px; width:30px; height:17px; font-size:9px; color:#adadad; padding:2px 0 0 12px; }
+ul.seat_map a.selected3{ background-position:-155px -90px; width:30px; height:17px; font-size:11px; font-weight:bold; padding:2px 0 0 12px; color:#000; }
+ul.seat_map a.booked3{ background-position:-108px -113px; width:30px; height:17px; font-size:9px; color:#adadad; padding:2px 0 0 12px; }
+ul.seat_map a.ladies3{ background-position:-155px -113px; width:30px; height:17px; font-size:9px; color:#adadad;  padding:2px 0 0 12px; color:#000; }
+
+ul.seat_map span.top_part{ font-size:11px; font-weight:bold; margin-left:12px; width:25px; }
+ul.seat_map span.bottom_part{ font-size:9px; color:#3f3f3f; margin-left:3px; line-height:11px; }
+
+ul.margn_bttm{ margin-bottom:30px; }
+
+/*---- Bus-Structure ----*/
+div.bus_structure{ margin-bottom:10px; }
+
+/*---- Seat-List ----*/
+ul.seat_list li.last{ margin-bottom:0px; }
+ul.seat_list li{ font-size:11px; color:#9a9a9a; margin-bottom:8px; float:left; width:134px; }
+ul.seat_list span.text{ margin-top:3px; }
+ul.seat_list span.text1{ margin-top:2px; }
+ul.seat_list span.available{ background-position:0 -24px; width:24px; height:22px; margin-right:5px; }
+ul.seat_list span.selected{ background-position:-26px -24px; width:24px; height:22px; margin-right:5px; }
+ul.seat_list span.booked{ background-position:0 -48px; width:24px; height:22px; margin-right:5px; }
+ul.seat_list span.ladies{ background-position:-26px -48px; width:24px; height:22px; margin-right:5px; }
+ul.seat_list span.available_1{ background-position:-56px -0px; width:42px; height:17px; margin-right:5px; }
+ul.seat_list span.selected_1{ background-position:-56px -21px; width:42px; height:17px; margin-right:5px; }
+ul.seat_list span.booked_1{ background-position:-56px -41px; width:42px; height:17px; margin-right:5px; }
+ul.seat_list span.ladies_1{ background-position:-29px -105px; width:42px; height:17px; margin-right:5px; }
+
+
+/*---- Left-Part ----*/
+div.seat1 div.left_part{ width:478px; margin-right:25px; }
+
+/*---- Right-Part ----*/
+div.right_part{ width:205px; }
+div.right_part p.seat_amount{ margin-bottom:2px; }
+
+/*---- Seat-Description ----*/
+div.seat_description{ width:182px; border:5px solid #f0f0f0; padding:11px 0 11px 10px; margin-bottom:10px; }
+
+/*---- Tool-Tip ----*/
+div#details_info{ width:170px; }
+div#seat_info{ width:170px; }
+div.tool_tip{ width:156px; padding:13px 6px 5px; border:1px solid #83a7e1; background:#fff; position:relative; }
+div.tool_tip p.info{ text-align:right; font-size:12px; color:#281871; margin-bottom:6px; }
+div.tool_tip p.info1{ text-align:left; font-size:12px; color:#281871; margin-bottom:6px; }
+div.tool_tip p.total{ background:#efefef; line-height:22px; padding-right:5px; }
+div#details_info span.arrow{ background-position:-77px -64px; width:16px; height:8px; position:absolute; right:50px; top:-7px; z-index:11; }
+div#seat_info span.arrow{ background-position:-77px -64px; width:16px; height:8px; position:absolute; right:50px; top:-7px; z-index:11; }
+
+/*---- Select-Free ----*/
+.select-free{ position:absolute; z-index:10; #overflow:hidden;/*must have*/width170px:;/*must have for any value*/; }
+.select-free iframe{ display:none;/*sorry for IE5*/display/**/:block;/*sorry for IE5*/#position:absolute;/*must have*/#top:px;/*must have*/#left:0;/*must have*/z-index:-1;/*must have*/filter:mask();/*must have*/#width:900px;/*must have for any big value*/#height:900px/*must have for any big value*/; }  
+
+
+/*---- Select-Free ----*/
+div.bus_seat{ border:none medium; padding:0px; }
+a.secondary_button{ background:#ce410c;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#ededed));
+	background-image: -moz-linear-gradient(top, #fafafa, #ededed);
+	background-image:-o-linear-gradient(top, #fafafa, #ededed);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#ededed');
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+	font-size:160%;
+	color:#1b4ea2;
+	padding:2px 15px 4px;
+	height:28px;
+	line-height:32px;
+	border:solid 1px #afbedd;
+	overflow:hidden;
+	text-decoration:none;
+ }
+ 
+a.secondary_button:hover{ 	background-image:-webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fafafa)); background-image: -moz-linear-gradient(top, #ededed, #fafafa);
+background-image:-o-linear-gradient(top, #ededed, #fafafa); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#fafafa'); }
+a.button.reserve{ padding:2px 15px 4px; margin-right:10px; }
+.refrnce_txt{ font-size:160%; color:#2f2f2f; }
+
+.error_cases{ background:#fff4f4; padding:10px; }
+.error_icon{ background-position:-71px -126px; width:23px; height:23px; margin-right:12px; }
+.error_txt{ width:625px; }
+.txt_one{ font-size:200%; color:#d90303; line-height:20px; margin-bottom:5px; font-family:Segoe UI; }
+.txt_two{ font-size:120%; color:#2f2f2f; line-height:14px; font-family:Segoe UI; }
+
+.cancel_popup{ border:3px solid #cfcfcf; -moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px;	border-radius:5px; background:#ffffff; padding:15px; width:354px; }	
+.popup_heading{ font-size:160%; color:#2f2f2f; line-height:18px; }
+.popup_hedng_one{ font-size:120%; color:#2f2f2f; font-family:segoe UI; }
+
+div.left_part p.bus_descrptn{ margin-bottom:3px; }
+div.left_part p.boarding_point{ margin-bottom:12px; }
+div.left_part a.select{ font-size:12px; width:180px; color:#0099ff; text-decoration:underline; }
+div.left_part span.selected_seat{ width:108px; font-size:12px; line-height:15px; margin-right:30px; }
+div.left_part span.fare{ width:65px; font-size:12px; margin-top:6px; }
+div.left_part span.amount{ font-size:18px; color:#d24105; margin:1px 10px 0 0; }
+div.left_part a.details{ font-size:11px; color:#0099ff; margin-top:5px; text-decoration:underline; }
+div.left_part label.point{ margin-right:5px; font-size:12px; margin-top:2px; }
+div.left_part select{ padding:0px; font-size:12px; color:#3f3f3f; width:180px; }

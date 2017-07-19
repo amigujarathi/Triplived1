@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html# -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Add experiance detail</title>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="css/mdb.min.css" rel="stylesheet">
+<!-- Your custom styles (optional) -->
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
+<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- Start your project here-->
+
+	
+	<script type="text/x-handlebars-template" id="templateExp">
+ 			{{#each employees}}
+				{{#shouldIterate @index}}
+			   {{#elementExists ../employees @index 0}}
+				<div class="col-lg-12">
+					<div id="dropbox-{{@index}}" class="dropable-sec">
+						<img id="img-{{lookupElementId ../employees @index 0}}" src="{{lookupElementPhoto ../employees @index 0}}" alt="" class="  grid-item grid-item--width3 grid-item--height3 img-fluid mCS_img_loaded">
+					</div>
+				</div>
+				{{/elementExists}}
+				{{#elementExists ../employees @index 1}}
+					<div class="col-lg-6">
+						<div id="dropbox-{{@index}}" class="dropable-sec">
+							<img id="img-{{lookupElementId ../employees @index 1}}" src="{{lookupElementPhoto ../employees @index 1}}" alt="" class="  grid-item grid-item--width4 grid-item--height4 img-fluid mCS_img_loaded">
+						</div>
+					</div>
+				{{/elementExists}}
+				{{#elementExists ../employees @index 2}}
+					<div class="col-lg-6">
+						<div id="dropbox-{{@index}}" class="dropable-sec">
+							<img id="img-{{lookupElementId ../employees @index 2}}" src="{{lookupElementPhoto ../employees @index 2}}" alt="" class="  grid-item grid-item--width4 grid-item--height4 img-fluid mCS_img_loaded">
+						</div>
+					</div>
+				{{/elementExists}}
+ 			{{/shouldIterate}}
+			{{/each}}
+</script>
+	<script type="text/x-handlebars-template" id="template">
+ 			{{#each employees}}
+			 
+{{#shouldIterate @index}}
+				<div class="col-lg-4 box  {{#if @first}} box21  {{else}} box12  {{/if}}">
+						<div class="col-lg-4 col-md-4">
+							<div class="view overlay hm-zoom hm-red-strong ">
+								<img id="img-{{lookupElementId ../employees @index 0}}" src="{{lookupElementPhoto ../employees @index 0}}" alt="" class="  grid-item grid-item--width1 grid-item--height1 img-fluid mCS_img_loaded">
+								<div class="btn-group">
+									<button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<i class="fa fa-ellipsis-v"></i>
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Edit</a> <a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Delete</a>
+										<a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Set as cover pic</a>
+									</div>
+								</div>
+								
+							</div>
+							{{#elementExists ../employees @index 1 }}
+							<div class="view overlay hm-zoom hm-red-strong grid--item ">
+								<img id="img-{{lookupElementId ../employees @index 1}}" src="{{lookupElementPhoto ../employees @index 1}}" alt="" class=" grid-item grid-item--width1 grid-item--height1 img-fluid mCS_img_loaded">
+								<div class="btn-group">
+									<button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<i class="fa fa-ellipsis-v"></i>
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Edit</a> 
+										<a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Delete</a>
+										<a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Set as cover pic</a>
+									</div>
+								</div>
+							</div>
+							{{/elementExists}}
+						</div>
+						{{#elementExists ../employees @index 2 }}
+						<div class="col-lg-8 col-md-8">
+							<div class="view overlay hm-zoom hm-red-strong  ">
+								<img id="img-{{lookupElementId ../employees @index 2}}" src="{{lookupElementPhoto ../employees @index 2}}" alt="" class="  grid-item grid-item--width2 grid-item--height2 img-fluid mCS_img_loaded">
+								<div class="btn-group">
+									<button class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<i class="fa fa-ellipsis-v"></i>
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Edit</a> 
+										<a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Delete</a>
+										<a class="dropdown-item" href="http://demo.webhtmlexpert.com/xhtml/triplived/inner2.html#">Set as cover pic</a>
+									</div>
+								</div>
+								<!-- <div class="mask flex-center waves-effect waves-light"></div> -->
+							</div>
+						</div>
+						{{/elementExists}}
+					</div> 
+{{/shouldIterate}} 
+			  {{/each}}
+		</script>
+
+	<a id="openModalDialog" href="#" > Click to open </a>
+	<div class="modal fade" id="AddAlbums" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+
+					<div class="Drag-img-sec">
+						<div id = "exptop_images" class="exptop_images">
+							<div id="gridParent" style="" dir="ltr">
+								<div id="grid" class="grid"></div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-6 left-half col-md-6">
+								<div class="blue darken-3 p-a-1 white-text toptitle">About the experience</div>
+								<div class="white p-x-2 p-y-1">
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="md-form">
+												<input type="text" id="form1" class="form-control"> <label for="form1" class="">Example label</label>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-6">
+											<select class="mdb-select">
+												<option value="" disabled selected>Select Day</option>
+												<option value="1">Day 1</option>
+												<option value="2">Day 2</option>
+												<option value="3">Day 3</option>
+											</select>
+										</div>
+										<div class="col-lg-6">
+											<select class="mdb-select">
+												<option value="" disabled selected>Select Time</option>
+												<option value="1">Time 1</option>
+												<option value="2">Time 2</option>
+												<option value="3">Time 3</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-12">
+											<div class="md-form">
+												<textarea type="text" id="form7" class="md-textarea"></textarea>
+												<label for="form7">Description</label>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-12">
+											<p class="label-text text-uppercase">Select Experience Type</p>
+											<div class="row">
+												<fieldset class="form-group col-lg-4">
+													<input type="checkbox" class="filled-in" id="checkbox22"> <label for="checkbox22">Hotel</label>
+												</fieldset>
+												<fieldset class="form-group text-lg-center col-lg-4">
+													<input type="checkbox" class="filled-in" id="checkbox33"> <label for="checkbox33">Restaurent</label>
+												</fieldset>
+												<fieldset class="form-group text-lg-right col-lg-4">
+													<input type="checkbox" class="filled-in" id="checkbox44"> <label for="checkbox44">Attraction</label>
+												</fieldset>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-6">
+											<select class="mdb-select">
+												<option value="" disabled selected>Select Activity</option>
+												<option value="1">Activity 1</option>
+												<option value="2">Activity 2</option>
+												<option value="3">Activity 3</option>
+											</select>
+										</div>
+										<div class="col-lg-6">
+											<select class="mdb-select">
+												<option value="" disabled selected>Select Feeling</option>
+												<option value="1">Feeling 1</option>
+												<option value="2">Feeling 2</option>
+												<option value="3">Feeling 3</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-lg-12 text-lg-right add-exp">
+											<button type="button" class="btn btn-danger" aria-label="Close" data-dismiss="modal" type="button">Add</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="   col-lg-5 col-md-5 pull-right  ">
+								<p class="m-y-1">Drag & Drop images to create an experience</p>
+								<div class="white p-x-2 p-y-1 " id="cart" >
+									 
+									<div id="exptop_images_1" class="exptop_images"  >
+														<div class="gridExp" id="gridExp">
+														</div>
+												 
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+
+
+	<!--Start your project here-->
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="js/tether.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+	<script type="text/javascript" src="js/fileupload.js"></script>
+	<script type="text/javascript" src="js/upload-js.js"></script>
+
+	<script src='js/masonry.pkgd.js'></script>
+	<script src='js/classie.js'></script>
+	<script src="js/handlebars.min.js"></script>
+
+	<script type="text/javascript">
+		
+    
+    
+    Handlebars.registerHelper('lookupElementPhoto', function(collection, index, id) {
+
+        var c = collection[index+id];
+        
+        var photo ="";
+        if( c != null){
+        	photo = collection[index+id].photo
+        }
+        return photo;
+    });
+    
+    Handlebars.registerHelper('lookupElementId', function(collection, index, id) {
+
+        var c = collection[index+id];
+        
+        var idd ="";
+        if( c != null){
+        	idd = collection[index+id].id
+        }
+        return idd;
+    });
+
+    Handlebars.registerHelper('shouldIterate', function(lvalue, options) {
+ 
+       var result = false;
+       if(lvalue == 0 || lvalue%3 == 0 ){
+    	   result = true;
+       }
+        if( result ) {
+            return options.fn(this);
+        } else {
+            return options.inverse(this);
+        }
+
+    });
+    
+    Handlebars.registerHelper('elementExists', function(collection, index, id, options) {
+    	 
+     	//if( collection.length <! 6 ) {
+         	console.debug("index is"+ index+"  and collection length is "+ collection.length);
+       // }
+    
+        var result = false;
+         
+ 		var c = collection[index+id];
+        if( c != null){
+        	result = true;
+        }
+
+         if( result ) {
+             return options.fn(this);
+         } else {
+             return options.inverse(this);
+         }
+
+     });
+    
+    	
+  data = {employees:[{id:1,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241289169-58452122136.jpg"},{id:2,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241192819-58452122136.jpg",},{id:4,photo:"http://demo.webhtmlexpert.com/xhtml/triplived/img/exp3.jpg"},{id:5,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462377431603-58452122136.jpg"},{id:6,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462378666046-58452122136.jpg",},{id:7,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241192819-58452122136.jpg",},{id:8,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241003326-58452122136.jpg"},{id:9,photo:"http://demo.webhtmlexpert.com/xhtml/triplived/img/exp8.jpg"},{id:10,photo:"http://demo.webhtmlexpert.com/xhtml/triplived/img/exp9.jpg",},{id:11,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241003326-58452122136.jpg"},{id:12,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462377431603-58452122136.jpg"},{id:13,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462378666046-58452122136.jpg",},{id:14,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241192819-58452122136.jpg",},{id:15,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241003326-58452122136.jpg"},{id:16,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241289169-58452122136.jpg"},{id:17,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241192819-58452122136.jpg",},{id:18,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241003326-58452122136.jpg"},{id:19,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462377431603-58452122136.jpg"},{id:20,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462378666046-58452122136.jpg",},{id:21,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241192819-58452122136.jpg",},{id:22,photo:"http://www.triplived.com/static/timeline/trip/58452122136/1462241003326-58452122136.jpg"}]};    	
+  dataExp = {employees:[]};
+  
+  gridExp = document.querySelector('.gridExp');
+  grid = document.querySelector('.grid');
+  
+  source = $('#template').html();
+  template = Handlebars.compile(source);
+  
+  source1 = $('#templateExp').html();
+  templateExp  = Handlebars.compile(source1);
+
+  $('.mdb-select').material_select();
+  
+  function createGrid(index) {
+	 
+	  
+		var html = template(data);
+		$('#grid').html(html);
+
+		$("#exptop_images").mCustomScrollbar({
+			axis : "x",
+			theme : "light-3",
+			advanced : {
+				autoExpandHorizontalScroll : true
+			}
+		});
+		
+		msnry = new Masonry(grid, {
+			containerStyle : null,
+			transitionDuration: '0.8s'
+			
+
+		});
+
+		msnry.on('layoutComplete', function(laidOutItems) {
+			console.log('Masonry layout complete with '
+					+ laidOutItems.length + ' items');
+		});
+  }
+  
+  
+  var msnry1 = null;
+  function createGridExp(index) {
+		
+	  
+		var html = templateExp(dataExp);
+		$('#gridExp').html(html);
+
+	//	if(dataExp.length >= 3){
+		  /* 	 $("#exptop_images_1").mCustomScrollbar({
+				axis : "x",
+				theme : "light-3",
+				advanced : {
+					autoExpandHorizontalScroll : true
+				}
+			});    */ 
+	//	}
+		
+	/* 
+		         if(msnry1 != null){
+					msnry1.destroy();
+				}
+				msnry1 = new Masonry(gridExp, {
+					containerStyle : { position: 'relative' },
+					transitionDuration: '0.8s'
+
+				});
+				msnry1.on('layoutComplete', function(laidOutItems) {
+					console.log('Masonry layout complete with '
+							+ laidOutItems.length + ' items');
+				});        */ 
+		}
+
+		grid.addEventListener('click', function(event) {
+			// don't proceed if item was not clicked on
+			if (!matchesSelector(event.target, '.grid-item')) {
+				return;
+			}
+			//alert("OK");
+			// change size of item via class
+			//event.target.classList.toggle('grid-item--gigante');
+
+			moveItem(event.target);
+
+			setTimeout(function() {
+				var id = event.target.id.replace("img-", "");
+
+				var data1 = getItem(data.employees, id);
+				data.employees = $.grep(data.employees, function(item) {
+					return item.id != id;
+				});
+
+				msnry.destroy();
+				createGrid(1);
+
+				dataExp.employees.push(data1);
+				createGridExp(1);
+			}, 1000);
+		});
+
+		function getItem(arr, id) {
+			for (var i = 0; i < arr.length; i++) {
+				if (arr[i].id == id) {
+					return arr[i];
+				} else {
+					console.debug(arr[i].id);
+				}
+			}
+		}
+
+		cart = $('#cart');
+		function moveItem(target) {
+
+			//	$('.add-to-cart').on('click', function () {
+
+			cart.css({
+				'border' : '1px dashed gray'
+			});
+			var imgtodrag = $(target); //$(this).parent('.item').find("img").eq(0);
+			if (imgtodrag) {
+				var imgclone = imgtodrag.clone().offset({
+					top : imgtodrag.offset().top,
+					left : imgtodrag.offset().left
+				}).css({
+					'opacity' : '0.7',
+					'position' : 'absolute',
+					'height' : '100px',
+					'width' : '100px',
+					'z-index' : '100000'
+				}).appendTo($('body')).animate({
+					'top' : cart.offset().top + 70,
+					'left' : cart.offset().left + 130,
+					'width' : 100,
+					'height' : 100
+				}, 500, 'easeOutCirc');
+
+				setTimeout(function() {
+					cart.effect("shake", {
+						times : 1
+					}, 200);
+					cart.css({
+						'border' : 'none'
+					});
+				}, 800);
+
+				imgclone.animate({
+					'width' : 0,
+					'height' : 0
+				}, function() {
+					$(this).detach()
+				});
+			}
+			//});
+		}
+
+		$('#openModalDialog').click(function() {
+			$('#AddAlbums').modal('show');
+
+			$('#AddAlbums').on('shown.bs.modal', function(e) {
+				createGrid(0);
+			})
+		});
+	</script>
+
+	<script>
+    /* (function($){
+        $(window).on("load",function(){
+            $(".content").mCustomScrollbar();
+        });
+    })(jQuery); */
+</script>
+
+</body>
+</html>

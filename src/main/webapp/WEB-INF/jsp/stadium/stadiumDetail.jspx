@@ -1,0 +1,120 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<link rel="stylesheet" href="${css_url}/twiter/bootstrap.css?v=1"><!-- css --></link>
+	<link rel="stylesheet" href="${css_url}/connectme/typeahead/typeahead.css?v=1"><!-- css --></link>
+	<link rel="stylesheet" href="${css_url}/connectme/extendedsignup.css"><!-- css --></link>
+
+	<!--  Jquery js -->
+	<script type="text/javascript" src="${url}/jquery/jquery-1.10.0.js"><!-- script --></script>
+	<script type="text/javascript" src="${url}/ui/jquery.ui.core.js"><!-- script --></script>
+	<script type="text/javascript" src="${url}/ui/jquery-ui.js"><!-- script --></script>
+	
+	<!--  Image Upload js -->
+	<script type="text/javascript" src="${url}/jquery/image-upload/vendor/jquery.ui.widget.js"><!--script --></script>
+	<script type="text/javascript" src="${url}/jquery/image-upload/jquery.iframe-transport.js"><!--script --></script>
+	<script type="text/javascript" src="${url}/jquery/image-upload/jquery.fileupload.js"><!--script --></script>
+	<script type="text/javascript" src="${url}/jquery/image-upload/jquery.tmpl.min.js"><!--script --></script>
+	
+	<!--  Twiters js -->
+	<script type="text/javascript" src="${url}/twiter/js/bootstrap.js"><!-- script --></script>
+	<script type="text/javascript" src="${url}/twiter/typeahead/typeahead.min.js"><!-- script --></script>
+	<script type="text/javascript" src="${url}/twiter/template/hogan-2.0.0.js"><!-- script --></script>
+
+	<!--  Local storage -->
+	<script type="text/javascript" src="${url}/html5utils/store.min.js"><!-- script --></script>
+	<script type="text/javascript" src="${url}/html5utils/geo.js"><!-- script --></script>
+	
+	<!-- Validations -->
+	<script src="${url}/jquery/validate/jquery.validate.js"><!-- script --></script>
+	<script src="${url}/jquery/validate/additional-methods.js"><!-- script --></script>
+	
+	    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-34.397, 150.644)
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),  mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+    
+	<div class="container bs-docs-container"  style="border: 1px solid #EEEEEE;  border-radius: 6px;  margin-top: 12px;  max-width: 970px">
+		<div class = "row">
+			<div class="col-md-12" role="main">
+				<h3>Title: Jawaharlal Nehru Stadium, Delhi</h3>
+				<div class="stadium-detail col-lg-8">
+					Detail: Jawaharlal Nehru Stadium, in Delhi, India, is a multipurpose sports arena hosting football and other sporting events, 
+					as well as large-scale entertainment events. It is named after the first Prime Minister of India. The all-seater facility seats 60,000 spectators 
+					and up to 100,000 for concerts. In terms of seating capacity, it is the fourth largest multipurpose stadium in India and the 51st largest in the world. 
+					The stadium houses the headquarters of the Indian Olympic Association.
+				</div> 
+				<div class="stadium-detail col-lg-3">
+					<img class= "img-responsive img-rounded" width="250" height="214" alt="Jawaharlal Nehru Stadium, Delhi" src="/static/images/stadiums/delhi/250px-Jawaharlal_Nehru_Stadium.jpg" /> 
+				</div>
+			</div>
+		</div>
+		<div class= "row">
+			<div class="col-md-12">
+				<h4>Address</h4>
+				<div>
+					JLN stadium, 112202 Delhi
+				</div>
+			</div>
+		</div>
+		<div class= "row">
+			<div class="col-md-12">
+				<h4> Sports Played</h4>
+				<div class="stadium-detail col-lg-8">
+					
+					<div>
+						Cricket<br/>Hockey<br/>FootBall
+					</div>
+				</div>
+				<div class="stadium-detail col-lg-3">
+					<div id="map-canvas" style="height:100px;width:100px;">Google Maps Here</div> 
+					 <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+				</div>	
+			</div>
+		</div>
+		<div class= "row">
+			<div class="col-md-12">
+				<h4> Stadium reviews</h4>
+				<div class="stadium-detail col-lg-8">
+					
+					<div>
+						<ul>
+							<li>Good Place for Playing cricket</li>
+						</ul>
+					</div>
+				</div>
+				<div class="stadium-detail col-lg-3">
+					&#160; 
+				</div>	
+			</div>
+		</div>
+		<div class= "row">
+			<div class="col-md-12">
+				<h4> Add a review</h4>
+			</div>
+		</div>
+	</div>		
+</jsp:root>

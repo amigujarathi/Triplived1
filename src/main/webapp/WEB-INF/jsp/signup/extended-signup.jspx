@@ -1,0 +1,82 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+
+	<!-- Main Container Fluid -->
+	<div style="visibility: visible;" class="container-fluid menu-hidden">
+		<!-- Content -->
+		<div>
+			<!-- <div class="layout-app"> -->
+			<div class="innerLR">
+
+				<div class="relativeWrap">
+					<div class="box-generic">
+
+						<!-- Tabs Heading -->
+						<div class="tabsbar">
+							<ul>
+								<li class="glyphicons log_book  active"><a
+									href="#addreesInfo" data-toggle="tab"><i>&#160;</i> Address Information</a></li>
+								<li class="glyphicons circle_plus tab-stacked"><a
+									href="#home" data-toggle="tab"><i>&#160;</i> Personal Information</a></li>
+								<li class="glyphicons camera tab-stacked"><a
+									href="#about-me" data-toggle="tab"><i>&#160;</i> <span>Add Photo</span></a></li>
+								<li class="glyphicons lock tab-stacked"><a
+									href="#changePassword" data-toggle="tab"><i>&#160;</i> <span>Change Password</span></a></li>
+								<li class="glyphicons star tab-stacked"><a
+									href="#favourites" data-toggle="tab"><i>&#160;</i> <span>Your Interests</span></a></li>
+							</ul>
+						</div>
+						<!-- // Tabs Heading END -->
+
+						<div class="tab-content">
+
+							<!-- Tab content -->
+							<div class="tab-pane fade in active" id="addreesInfo">
+								<h4>Address Information</h4>
+								<tiles:insertTemplate template="address-info.jspx" />
+							</div>
+
+							<!-- // Tab content END -->
+
+							<!-- Tab content -->
+							<div class="tab-pane fade" id="home">
+								<h4>Personal Information</h4>
+								<tiles:insertTemplate template="personal-info.jspx" />
+							</div>
+							<!-- // Tab content END -->
+
+							<!-- Tab content -->
+							<div class="tab-pane fade" id="about-me">
+								<h4>Picture Upload</h4>
+								<tiles:insertTemplate template="about-me.jspx" />
+							</div>
+							<!-- // Tab content END -->
+
+							<!-- Tab content -->
+							<div class="tab-pane fade" id="favourites">
+								<h4>Your Interests</h4>
+								<tiles:insertTemplate template="sports-pref.jspx" />
+							</div>
+							<!-- // Tab content END -->
+							
+								<!-- Tab content -->
+							<div class="tab-pane fade" id="changePassword">
+								<h4>Change Password</h4>
+								<tiles:insertTemplate template="changePassword.jspx" />
+							</div>
+							<!-- // Tab content END -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</jsp:root>

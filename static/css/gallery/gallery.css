@@ -1,0 +1,281 @@
+.rg-image-wrapper{
+	position:relative;
+	padding-bottom:10px;
+	min-height:20px;
+}
+.rg-image{
+	position:relative;
+	text-align:center;
+	/* line-height:356px; */
+	background:#606060;
+}
+.rg-image img{
+	max-height:100%;
+	max-width:100%;
+	border:solid 3px #fff;	
+}
+.rg-image-nav a{
+	position:absolute;
+	top:0px;
+	left:5px;
+	background:transparent url(/static/images/nav.png) no-repeat -20% 50%;
+	width:24px;
+	height:100%;
+	text-indent:-9000px;
+	cursor:pointer;
+	opacity:0.7;
+	outline:none;
+	z-index:2;
+}
+.rg-image-nav a.rg-image-nav-next{
+	right:0px;
+	left:auto;
+	background-position:125% 50%;
+}
+.rg-image-nav a:hover{
+	opacity:0.8;
+}
+.rg-caption {
+	text-align:center;
+	margin-top:15px;
+	position:relative;
+	display:none;
+}
+.rg-caption p{
+	font-size:11px;
+	letter-spacing:2px;
+	font-family: 'Trebuchet MS', 'Myriad Pro', Arial, sans-serif;
+	line-height:16px;
+	padding:0 15px;
+	text-transform:uppercase;
+}
+.rg-view{
+	height:30px;
+}
+.rg-view a{
+	display:block;
+	float:right;
+	width:16px;
+	height:16px;
+	margin-right:3px;
+	background:none;
+	border:3px solid #464646;
+	opacity:0.8;
+}
+.rg-view a:hover{
+	opacity:1.0;
+}
+.rg-view a.rg-view-full{
+	background-position:0px 0px;
+}
+.rg-view a.rg-view-selected{
+	background-color:#6f6f6f;
+	border-color:#6f6f6f;
+}
+.rg-view a.rg-view-thumbs{
+	background-position:0px -16px;
+}
+.rg-loading{
+	width:46px;
+	height:46px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	background:#333 url(/static/images/ajax-loader.gif) no-repeat center center;
+	margin:-23px 0px 0px -23px;
+	z-index:100;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	opacity:0.7;
+}
+
+
+
+/* Elastislide Style */
+.es-carousel-wrapper{
+	position:relative;
+	-moz-box-shadow:0 2px 7px 2px rgba(0, 0, 0, 0.9) inset;
+	-webkit-box-shadow:0 2px 7px 2px rgba(0, 0, 0, 0.9) inset;
+	box-shadow:0 2px 7px 2px rgba(0, 0, 0, 0.6) inset;
+	position:relative;
+	margin-bottom:20px;
+	padding:10px 0;
+	background:#3c3c3c;
+}
+.es-carousel{
+	overflow:hidden;
+ height: 71px;
+}
+.es-carousel ul{
+	/*display:none;*/
+}
+.es-carousel ul li{
+	height:100%;
+	float:left;
+	display:block;
+}
+.es-carousel ul li a{
+	display:block;
+	border-width:2px;
+	border-style:solid;
+	border-color:#999;
+	opacity:0.8;
+	-webkit-touch-callout:none;
+	/* option */
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	outline:none;
+}
+.es-carousel ul li.selected a{
+	border-color:#fff;
+	opacity:1.0;
+}
+.es-carousel ul li a img{
+	display:block;
+	border:none;
+	max-height:100%;
+	max-width:100%;
+	
+}
+.es-nav span{
+	position:absolute;
+	top:0;
+	left:0;
+	width:24px;
+	height:100%;
+	background:rgba(255,255,255,0.3);
+	text-indent:-9000px;
+	cursor:pointer;
+	opacity:0.8;
+	z-index:2;
+}
+
+.es-nav span span{ background:url(/static/images/nav.png) no-repeat -19px -36px; width:10px; height:14px; display:inline-block; margin:47px 0 0 10px; }
+.es-nav span.es-nav-next{ right:0; left:auto; }
+.es-nav span.es-nav-next span{ background-position:-30px -36px; }
+.es-nav span.es-nav-prev span{ background-position:-12px -36px; }
+
+.es-nav span:hover{ opacity:1.0; }
+
+
+
+
+
+/*!
+ * Bootstrap v3.0.2
+ *
+ *  Overtride methods depends on the below "Targeted" devices. [1200, 970, 480 etc.]
+*/
+
+/* Large desktop [ Mark: *LG* ] */ 
+@media (min-width:1200px) { 
+	
+}
+
+/* desktop upto 1024px  [ Mark: *MD* ] */
+@media (min-width:992px) and (max-width:1199px) { 
+	
+}
+
+/* Portrait tablet to landscape and desktop [ Mark: *SM* ] */
+@media (min-width:768px) and (max-width:991px) {
+	
+}
+
+/* Landscape phone to portrait tablet [ Mark: *XS* ] */
+@media (max-width:767px) { 
+	.rg-thumbs{ display:none; }
+}
+
+
+
+      .container-outer {
+        width: 100%;
+        padding: 0;
+        display: table;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+      }
+      
+      .container-middle {
+        padding: 0;
+        vertical-align: middle;
+        display: table-cell;
+        margin: 0;
+      }
+      
+      .container-inner {
+        width: 500px;
+        margin: 0 auto;
+      }
+      
+      .content {
+        text-align: left;
+        padding: 10px 35px;
+        border: 1px solid #b3b3b3;
+        border-radius: 4px;
+        box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+        background-color:#fafafa;
+        background-image: -moz-radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
+        background-image: -webkit-radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
+        background-image: -o-radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
+        background-image: -ms-radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
+        background-image: radial-gradient(50% 35%, ellipse cover, #FAF7F7, #fffde8 100%);
+      }
+      
+      p.footer {
+        text-align:center;
+        font-size:0.75em;
+      }
+      
+      p.footer a, 
+      p.footer a:visited 
+      p.footer a:active {
+        color:#424242;
+        text-decoration:none;
+        font-weight:bold;
+      }
+      
+      p.footer a:hover {
+        text-decoration:underline;
+      }
+      .mobile .mobile,
+      .tablet .tablet,
+      .desktop .desktop,
+      .portrait .portrait,
+      .landscape .landscape,
+      .ios .ios,
+      .iphone .iphone,
+      .ipad .ipad,
+      .ipod .ipod,
+      .android .android,
+      .blackberry .blackberry,
+      .windows .windows,
+      .fxos .fxos {
+        background: green;
+        color: #FFF;
+      }
+      span {
+        display: block;
+        padding: 2px 15px;
+      }
+      h2 {
+        margin: 0;
+      }
+      .content {
+        padding: 25px 35px;
+      }
+      iframe {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 1em;
+        width: 270px !important;
+        margin-top: 10px;
+      }

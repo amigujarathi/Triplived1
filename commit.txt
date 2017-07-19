@@ -1,0 +1,32 @@
+On branch dev
+Your branch is up-to-date with 'origin/dev'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   src/main/java/com/domain/triplived/trip/dto/Status.java
+	modified:   src/main/java/com/triplived/controller/trip/TripController.java
+	modified:   src/main/java/com/triplived/controller/trip/TripEntityLikeController.java
+	modified:   src/main/java/com/triplived/controller/trip/TripMediaController.java
+	modified:   src/main/java/com/triplived/dao/trip/TripDAO.java
+	modified:   src/main/java/com/triplived/dao/trip/TripMediaDAO.java
+	modified:   src/main/java/com/triplived/dao/trip/impl/TripMediaDAOImpl.java
+	modified:   src/main/java/com/triplived/entity/TripCommentsDb.java
+	modified:   src/main/java/com/triplived/entity/TripEntityMediaDb.java
+	modified:   src/main/java/com/triplived/entity/TripEntityMediaLikesDb.java
+	modified:   src/main/java/com/triplived/service/trip/TripLikeService.java
+	modified:   src/main/java/com/triplived/service/trip/TripService.java
+	modified:   src/main/java/com/triplived/service/trip/impl/TripLikeServiceImpl.java
+	modified:   src/main/java/com/triplived/service/trip/impl/TripServiceImpl.java
+	modified:   src/main/resources/log4j.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	commit.txt
+	src/main/java/com/domain/triplived/trip/dto/LikeStatus.java
+	src/main/java/com/triplived/entity/TripMediaCommentsDb.java
+	src/main/java/com/triplived/service/trip/TripCommentService.java
+	src/main/java/com/triplived/service/trip/impl/TripCommentServiceImpl.java
+
+no changes added to commit (use "git add" and/or "git commit -a")

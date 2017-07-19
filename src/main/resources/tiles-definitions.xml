@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="connectme.guest.header" template="/WEB-INF/jsp/template/header.jsp" />
+	<definition name="connectme.user.header" template="/WEB-INF/jsp/template/header-user.jsp" />
+
+
+	<!-- <definition name="connectme.user.header.responsive" template="/WEB-INF/jsp/template/header-user-responsive.jsp"/> 
+		<definition name="connectme.guest.header.responsive" template="/WEB-INF/jsp/template/header-guest-responsive.jsp"/> -->
+
+	<definition name="connectme.footer" template="/WEB-INF/jsp/template/footer.jsp" />
+
+	<definition name="layout-guest" template="/WEB-INF/jsp/template/layout.jsp">
+		<put-attribute name="pageType" value="static" />
+		<put-attribute name="pagetitle" value="" />
+		<put-attribute name="header" value="connectme.guest.header" />
+		<put-attribute name="footer" value="connectme.footer" />
+		<put-attribute name="body" value="" />
+	</definition>
+
+	<definition name="layout-user" template="/WEB-INF/jsp/template/layout.jsp">
+		<put-attribute name="pageType" value="dynamic" />
+		<put-attribute name="pagetitle" value="" />
+		<put-attribute name="header" value="connectme.user.header" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="connectme.footer" />
+
+	</definition>
+
+
+	<definition name="index" extends="layout-guest">
+		<put-attribute name="pageType" value="static" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jspx" />
+	</definition>
+
+	<definition name="home" extends="layout-user">
+		<put-attribute name="pageType" value="homePage" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/attraction.jsp" />
+	</definition>
+
+	<definition name="home" extends="layout-user">
+		<put-attribute name="pageType" value="homePage" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/Newattraction.jsp" />
+	</definition>
+
+
+	<definition name="trip-status" extends="layout-guest">
+		<put-attribute name="pageType" value="staticTripStatus" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/staticItenary/trip/trip-status.jsp" />
+	</definition>
+
+	<definition name="trip-end" extends="layout-guest">
+		<put-attribute name="pageType" value="staticTripEnd" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/staticItenary/trip/trip-end.jsp" />
+	</definition>
+
+	<definition name="attraction-parent" extends="layout-guest">
+		<put-attribute name="pageType" value="staticAttraction" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/staticItenary/attraction/attraction-parent.jsp" />
+	</definition>
+
+	<definition name="trip" extends="layout-guest">
+		<put-attribute name="pageType" value="staticAttraction" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/staticItenary/trip.jsp" />
+	</definition>
+
+	<definition name="city-parent" extends="layout-guest">
+		<put-attribute name="pageType" value="staticCity" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/staticItenary/city/city-parent.jsp" />
+	</definition>
+
+
+	<definition name="city-image-upload" extends="layout-guest">
+		<put-attribute name="pageType" value="cityImageUpload" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/city/cityImageUpload.jsp" />
+	</definition>
+
+	<definition name="trip-parent" extends="layout-guest">
+		<put-attribute name="pageType" value="staticTrip" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/staticItenary/trip/trip-parent.jsp" />
+	</definition>
+
+	<definition name="log-view" extends="layout-guest">
+		<put-attribute name="pageType" value="staticTrip" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/logView/logView.jsp" />
+	</definition>
+
+	<definition name="attractionStaticItenary"
+		template="/WEB-INF/jsp/triplived/staticItenary/attraction/attractionStaticItenary.jsp" />
+
+
+	<definition name="hotel-parent" extends="layout-guest">
+		<put-attribute name="pageType" value="staticHotel" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/staticItenary/hotel/hotel-parent.jsp" />
+	</definition>
+
+	<definition name="cityStaticItenary"
+		template="/WEB-INF/jsp/triplived/staticItenary/city/cityStaticItenary.jsp" />
+
+	<definition name="tripStaticItenary"
+		template="/WEB-INF/jsp/triplived/staticItenary/trip/tripStaticItenary.jsp" />
+
+	<definition name="hotelStaticItenary"
+		template="/WEB-INF/jsp/triplived/staticItenary/hotel/hotelStaticItenary.jsp" />
+
+
+	<definition name="static-itenary" extends="layout-user">
+		<put-attribute name="pageType" value="staticAttractionUpload" />
+		<put-attribute name="pagetitle" value="Static Itenary" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/signup/extended-signup.jspx" />
+	</definition>
+
+	<definition name="attraction" extends="layout-guest">
+		<put-attribute name="pageType" value="staticAttractionUpload" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/attraction.jsp" />
+	</definition>
+	
+	<definition name="bulkMailer" extends="layout-guest">
+		<put-attribute name="pageType" value="mailers" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/mailer/mailer.jsp" />
+	</definition>
+	
+	<definition name="travelPartner" extends="layout-guest">
+		<put-attribute name="pageType" value="Travel Partner" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/travelpartner/travelPartner.jsp" />
+	</definition>
+
+	<definition name="Newattraction" extends="layout-guest">
+		<put-attribute name="pageType" value="staticAttractionAdd" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/Newattraction.jsp" />
+	</definition>
+
+	<definition name="NewHotelAdditon" extends="layout-guest">
+		<put-attribute name="pageType" value="addNewHotel" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/hotel/addNewHotel.jsp" />
+	</definition>
+
+
+
+	<definition name="JsonEditor" extends="layout-guest">
+		<put-attribute name="pageType" value="jsonEditor" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/JsonEditor.jsp" />
+	</definition>
+
+	<definition name="TripVideoMonitor" extends="layout-guest">
+		<put-attribute name="pageType" value="tripVideo" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/TripVideoMonitor.jsp" />
+	</definition>
+
+	<definition name="TripReviewsEdit" extends="layout-guest">
+		<put-attribute name="pageType" value="tripReview" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/TripReviewsEdit.jsp" />
+	</definition>
+	
+	<definition name="tripEntityCurationPage" extends="layout-guest">
+		<put-attribute name="pageType" value="tripEntityCuration" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/tripEntityCuration.jsp" />
+	</definition>
+	
+	<definition name="TripAdminReviews" extends="layout-guest">
+		<put-attribute name="pageType" value="tripAdminReview" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/TripAdminReviews.jsp" />
+	</definition>
+
+	<definition name="TripEntityDisplay" extends="layout-guest">
+		<put-attribute name="pageType" value="tripentitydisplay" />
+		<put-attribute name="pagetitle" value="Trip-Lived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/triplived/TripEntityDisplay.jsp" />
+	</definition>
+
+	<definition name="aboutus" extends="layout-user">
+		<put-attribute name="pageType" value="static" />
+		<put-attribute name="pagetitle" value="Interestify: About Us" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pages/about.jsp" />
+	</definition>
+
+	<definition name="person-info" extends="layout-user">
+		<put-attribute name="pageType" value="person" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body" value="/WEB-INF/jsp/person-info.jsp" />
+	</definition>
+
+	<definition name="group-info" extends="layout-user">
+		<put-attribute name="pageType" value="group" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body" value="/WEB-INF/jsp/group-info.jsp" />
+	</definition>
+
+	<definition name="place-info" extends="layout-user">
+		<put-attribute name="pageType" value="places" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/content/stadium/place-info.jsp" />
+	</definition>
+
+	<definition name="contactus" extends="layout-user">
+		<put-attribute name="pageType" value="static" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body" value="/WEB-INF/jsp/pages/contact.jsp" />
+	</definition>
+
+	<definition name="termsandconditions" extends="layout-user">
+		<put-attribute name="pageType" value="static" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/pages/termsandconditions.jsp" />
+	</definition>
+
+	<!-- Depricated -->
+	<definition name="message-info" extends="layout-user">
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/absoluteMsgHistory.jsp" />
+	</definition>
+
+	<definition name="message-info-responsive" extends="layout-user">
+		<put-attribute name="pageType" value="messages" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/absoluteMsgHistory-responsive.jsp" />
+	</definition>
+
+	<definition name="eventPage" extends="layout-user">
+		<put-attribute name="pageType" value="event" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body" value="/WEB-INF/jsp/eventListing.jsp" />
+	</definition>
+
+	<definition name="extended-signup" extends="layout-user">
+		<put-attribute name="pageType" value="profile" />
+		<put-attribute name="pagetitle" value="TripLived" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/signup/extended-signup.jspx" />
+	</definition>
+
+
+
+
+	<!-- <definition name="layout-stadium" template="/WEB-INF/jsp/template/layout-stadium.jsp"> 
+		<put-attribute name="pagetitle" value=""/> <put-attribute name="body" value=""/> 
+		<put-attribute name="footer" value="connectme.footer"/> </definition> -->
+
+	<definition name="stadiumDetail" extends="layout-user">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/stadium/stadiumDetail.jspx" />
+	</definition>
+
+	<definition name="stadiumsInCity" template="/WEB-INF/jsp/stadium/stadiumsInCity.jspx" />
+
+	<definition name="stadiumContent" extends="layout-user">
+		<put-attribute name="pageType" value="statiumContent" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/content/stadium/stadiumContent.jspx" />
+	</definition>
+
+
+
+</tiles-definitions>

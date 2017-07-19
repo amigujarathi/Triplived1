@@ -1,0 +1,162 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+
+  
+<!--  	 
+<link href="${css_url}/twiter/bootstrap.css?v=2" rel="stylesheet" />
+<link href="${css_url}/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css"	href="/static/css/connectme/typeahead/typeahead.css?v=1" />
+<link rel="stylesheet" type="text/css"	href="/static/css/twiter/datepicker/datepicker.css" />
+
+
+<link rel="stylesheet" href="${css_url}/jquery/jquery-ui.css" />
+
+ -->
+
+ <div class="container">
+      
+      <div class="row">
+      
+        <div class="col-lg-12">
+          <h3 class="page-header">Add Stadium Data</h3>
+        </div>
+      </div><!-- /.row -->
+      
+      <div class="row">
+
+        <div class="col-sm-8 col-lg-8">
+            <form id="stadiumContentForm" name="stadiumContentForm" role="form" method="POST" action="${context}content/add">
+	            <div class="row">
+	              <div class="form-group col-lg-4">
+	                <label for="name" class="required" >Name </label>
+	                <input placeholder="Name" type="text" name="name" class="form-control" id="name" />
+	              </div>
+	              <div class="form-group col-lg-4" id="citiesdiv">
+	                <label for="city" class="required">City/State</label>
+	                <input type="hidden" name="cityEntered" id="cityId" value="" />
+	                <!--  city to from javascript from store  -->
+	              </div>
+	              
+	               <div class="form-group col-lg-4" id="type">
+	                <label for="type" class="required">type</label>
+	                	<select name="type" class = "form-control">
+	                		<option value="Stadium">Stadium</option>
+	                		<option value="Park">Park</option>
+	                		<option value="Club">Club</option>
+	                		<option value="School">School Ground</option>
+	                	</select>
+	              </div>
+	              <div class="form-group col-lg-4 ">
+	                <label for="sportsPlayed1" class="required">SportsPlayed*</label>
+	                <input placeholder="sportsPlayed" type="text" name="sportsPlayed1" class="form-control" id="sportsPlayed1" />
+	                <label for="sportsPlayed1" class="error" id="sportsPlayed1-label"><!-- FF/C --></label>
+	                <p id="sportsSelectedP"><!-- FF/C --></p>
+	                <input type="hidden" name="sportsPlayed" id="sportsPlayed" value="" />
+	              </div>
+	              
+	               <div class="form-group col-lg-4">
+	                <label for="zipCode">Pin Code*</label>
+	                <input placeholder="Pin Code" type="text" name="zipCode" class="form-control" id="zipCode" />
+	              </div>
+	              
+   
+	               <div class="form-group col-lg-4">
+	                <label for="address">Address*</label>
+	                <input placeholder="Address" type="text" name="address" class="form-control" id="address" />
+	              </div>
+	              
+	              <div class="form-group col-lg-4">
+					<label for="street">Area/Street*</label>
+					<div >
+						<input class="typeahead form-control" type="text" name="street" id = "street" tabindex="5"   placeholder="Please enter street name" required="" autofocus=""  title="Please enter your street address!"/>
+						<input type="hidden" name="streetId" id="streetId" value ="" />
+						
+					</div>
+					
+				  </div>
+	              
+	               <div class="form-group col-lg-4">
+	                <label for="establishedOn">EstablishedOn</label>
+	                <input placeholder="establishedOn" type="text" name="establishedOn" class="form-control" id="establishedOn" />
+	              </div>
+	              
+	               <div class="form-group col-lg-4 multi-field-wrapper">
+	                <label for="contactNumbers" >ContactNumbers <span class="extra">(add "," if multiple)</span></label>
+	                <input placeholder="contactNumbers" type="text" name="contactNumbers" class="form-control" id="contactNumbers" />
+		               <!--  <div class="multi-fields">
+		                	<div class="multi-field" style="padding-top:2px">
+		                		<div class="col-lg-8">
+		                			<input placeholder="contactNumbers" type="text" name="contactNumbers[]" class="form-control" id="contactNumbers" />
+		                		</div>
+		                		<div class="col-lg-2">
+			                		<button id="" type="button" class="remove-field btn btn-primary btn-sm">X Remove</button>
+			                	</div>	
+		                	</div>
+		                	<button  type="button" class="add-field btn btn-primary btn-sm" style="margin-left:3px">+ Add More</button>
+		                </div> -->
+	              </div>
+	              
+	              <div class="form-group col-lg-4">
+	                <label for="webSiteAddress">WebSiteAddress</label>
+	                <input placeholder="webSite Address" type="url" name="webSiteAddress" class="form-control" id="webSiteAddress" />
+	              </div>
+	               <div class="form-group col-lg-4">
+	                <label for="emailAddress">EmailAddress  <span class="extra">(add "," if multiple)</span></label>
+	                <input placeholder="Email Addresse" type="string" name="emailAddress" class="form-control multi-field-wrapper" id="emailAddress" />
+	              </div>
+	               <div class="form-group col-lg-8">
+	                <label for="otherInformation">OtherInformation</label>
+	                <textarea cols="118" rows="3" name="otherInformation" class="form-control" placeholder="other misc information"  ><!-- FF/C --></textarea>
+	              </div>
+	              <div class="form-group col-lg-8">
+	                <button id="submitStadiumData" type="submit" class="btn btn-primary">Submit</button>
+	                <span class="stadiumContentSubmit">&#160;</span>
+	              </div>
+              </div>
+            </form>
+        </div>
+ 
+      </div><!-- /.row -->
+    </div><!-- /.container -->
+ <!-- /.container -->
+ <!-- JavaScript -->
+ 
+ <!-- 
+<script src="/static/js/html5utils/store.min.js" type="text/javascript" ></script>	
+
+<script src="${minified_url}/js/twiter-min.js"></script>
+ 
+ -->
+ 
+ <![CDATA[
+ <style  type="text/css" >
+	form#stadiumContentForm label.error {
+		font-size: 12px;
+		color:red;
+	}
+	form div#smsgs{
+	font-size: 110%;
+    font-weight: bold;
+    padding-left: 12px;
+	}
+	
+ .required:after { content:" *"; color:red }
+ 
+ span.extra{
+  font-style: italic;
+  font-size: 11px;
+ }
+ p#sportsSelectedP {
+ 	padding-left: 17px;
+    	padding-top: 10px;
+   }
+ </style>
+	 ]]>
+</jsp:root>

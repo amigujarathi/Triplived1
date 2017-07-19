@@ -1,0 +1,30 @@
+<jsp:root
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	
+	<c:set var="user"  value="${sessionScope['logged_in_user']}"/>
+	
+	<spring:eval var="facebookUser" expression="T(com.triplived.controller.profile.UserFrom).FACEBOOK"/>
+
+	<script type="text/javascript">
+		var USER_ID = '${user.id}' ;
+		var USER_IMAGES = '${user_images}' ; 
+	</script>
+
+	<a href="#" id="drop4" role="button" class="dropdown-toggle flR" data-toggle="dropdown">
+		<c:choose>
+			<c:when test="${user.userFrom eq facebookUser}">
+				<img class="img-circle" id="uploaded-img" onerror=" changeimage(); return false;" src='http://graph.facebook.com/${user.id}/picture?width=35&amp;height=35'/>
+			</c:when>
+		</c:choose>
+		${user.name} 
+		<b class="caret">&#160;</b>
+	</a>
+						
+</jsp:root>

@@ -1,0 +1,508 @@
+<jsp:root xmlns:hotels="urn:jsptagdir:/WEB-INF/tags/hotels"
+	xmlns:util-raw="urn:jsptagdir:/WEB-INF/tags/util/raw"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:spring="http://www.springframework.org/tags" version="2.0">
+	<jsp:output omit-xml-declaration="yes" />
+
+	<c:if test="${not empty jsUtil.settings}">
+		<script type="text/javascript">
+			var settings = $
+			{
+				jsUtil.settings
+			}
+		</script>
+	</c:if>
+
+
+	<script type="text/javascript"
+		src="${minified_url}/js/jquery.c.min.js?v=2.2">
+	<!-- CC/FF-->
+		
+	</script>
+	<script type="text/javascript"
+		src="/static/js/twiter/js/bootstrap.min.js?v=2.2">
+	<!-- CC/FF-->
+		
+	</script>
+	<script type="text/javascript" src="/static/js/html5utils/store.min.js">
+	<!--FF/CC -->
+		
+	</script>
+	<script type="text/javascript"
+		src="/static/js/jquery/dateTimePicker/jquery.datetimepicker.js">
+	<!--FF/CC -->
+		
+	</script>
+
+
+	<c:choose>
+		<c:when test="${pageType == 'static'}">
+			<script src="${minified_url}/js/index.min.js?v=4.1">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/js/connectme/static/contact-us.js?v=3.2">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'static-itenary'}">
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js"></script>
+			<script src="${minified_url}/js/index.min.js?v=4.1">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/js/connectme/static/contact-us.js?v=3.2">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'staticAttraction'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=6.8">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/attraction/attraction.js?v=2.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'staticAttractionUpload'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script
+				src="/static/triplived/js/attraction/attraction-data-upload.js?v=2.0">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+
+		<c:when test="${pageType == 'staticAttractionAdd'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script
+				src="/static/triplived/js/attraction/attraction-data-add.js?v=2.0">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'addNewHotel'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/hotel/hotel-data-add.js?v=2.2">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+
+
+		<c:when test="${pageType == 'jsonEditor'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/trip/json-data-editor.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/attraction/jsoneditor.min.js">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'tripVideo'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/trip/trip-video-monitor.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'tripReview'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+			<script type="text/javascript"
+				src="//s3-us-west-2.amazonaws.com/s.cdpn.io/123941/shield-ui-lite.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<!-- <script type="text/javascript"
+				src="//s3-us-west-2.amazonaws.com/s.cdpn.io/123941/grid-data.js"> -->
+			<!--FF/CC -->
+				
+			<!-- </script> -->
+			
+			<script src="/static/triplived/js/trip/tripReviewEdit.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+		
+		<c:when test="${pageType == 'tripEntityCuration'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+			<script type="text/javascript"
+				src="//s3-us-west-2.amazonaws.com/s.cdpn.io/123941/shield-ui-lite.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<!-- <script type="text/javascript"
+				src="//s3-us-west-2.amazonaws.com/s.cdpn.io/123941/grid-data.js"> -->
+			<!--FF/CC -->
+				
+			<!-- </script> -->
+			
+			<script src="/static/triplived/js/trip/tripEntityCuration.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+		
+		<c:when test="${pageType == 'tripAdminReview'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+			<script type="text/javascript"
+				src="//s3-us-west-2.amazonaws.com/s.cdpn.io/123941/shield-ui-lite.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<!-- <script type="text/javascript"
+				src="//s3-us-west-2.amazonaws.com/s.cdpn.io/123941/grid-data.js"> -->
+			<!--FF/CC -->
+				
+			<!-- </script> -->
+			
+			<script src="/static/triplived/js/trip/tripAdminReview.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'tripentitydisplay'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=7.0">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/trip/trip-video-monitor.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/triplived/js/tinymce/tinymce.min.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'staticHotel'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=6.8">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/hotel/hotel.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'staticCity'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=6.8">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/city/city.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'cityImageUpload'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=6.8">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/city/cityUploadImage.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'staticTrip'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=6.8">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/trip/trip.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+
+		<c:when test="${pageType == 'staticTripStatus'}">
+
+			<script src="${minified_url}/js/extended.min.js?v=6.8">
+			<!--FF/C-->
+				
+			</script>
+			<script type="text/javascript"
+				src="/static/triplived/js/typeahead.bundle.min.js">
+			<!--FF/CC -->
+				
+			</script>
+
+			<script src="/static/triplived/js/trip/tripStatus.js?v=1.0">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'statiumContent'}">
+			<script src="${minified_url}/js/index.min.js?v=4.1">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="/static/js/connectme/static/contact-us.js?v=3.1">
+			<!-- CC/FF-->
+				
+			</script>
+			<script src="${minified_url}/js/stadium-content.min.js">
+			<!--FF/CC -->
+				
+			</script>
+		</c:when>
+		<c:when test="${pageType == 'homePage'}">
+			<script src="/static/m/interstify-search-results.min.js?v=3.2">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'messages'}">
+			<script src="/static/m/interestify-messages.min.js?v=3.2">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'event'}">
+			<script src="/static/m/interestify-events.min.js?v=3.2">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'profile'}">
+			<script src="${minified_url}/js/extended.min.js?v=6.8">
+			<!--FF/C-->
+				
+			</script>
+		</c:when>
+
+		<c:when test="${pageType == 'person'}">
+			<script src="${minified_url}/js/index.min.js?v=4.1">
+			<!-- script -->
+				
+			</script>
+			<script type="text/javascript"
+				src="${minified_url}/interestify-person-info.min.js?v=2.2">
+			<!-- FF/CC -->
+				
+			</script>
+
+		</c:when>
+
+	</c:choose>
+
+	<c:choose>
+		<c:when test="${user != null}">
+			<script src="/static/js/connectme/header/header.js?v=3.2">
+			<!-- CC/FF-->
+				
+			</script>
+		</c:when>
+		<c:otherwise>
+			<script src="${minified_url}/js/index.min.js?v=4.1">
+			<!-- CC/FF-->
+				
+			</script>
+
+			<script type="text/javascript">
+				//var DOMAIN = "${context}" ;
+				$(document).ready(function() {
+
+					if ($("#getStartedButtonId").get(0)) {
+						$('html, body').animate({
+							scrollTop : $("#getStartedButtonId").offset().top
+						}, 1000);
+					}
+				});
+
+				/* function loadSlSearch() {
+				 window.location += "slSearch";
+				}  */
+			</script>
+
+		</c:otherwise>
+	</c:choose>
+
+	<!--
+		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false" > </script>
+		<script type="text/javascript" src="/static/js/html5utils/geo.js?v=2.1" ></script> 
+    -->
+</jsp:root>

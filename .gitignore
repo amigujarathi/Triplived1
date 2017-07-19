@@ -1,0 +1,7 @@
+/target
+/.settings
+/WebContent
+/logs
+/bin/
+/logstash/
+/TripView.html

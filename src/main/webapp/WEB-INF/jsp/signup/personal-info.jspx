@@ -1,0 +1,101 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<spring:eval expression="logged_in_user" var="user"></spring:eval>
+
+<div class="row">
+	<div class="col-md-6">
+		<form id ="basicprofileinformation" name="basicprofileinformation" action="/" method="post" class="form-horizontal" role="form"  >
+			<!-- <label for="fname" class="error">&#160;</label><br/>
+			<label for="lname" class="error">&#160;</label><br/>
+			<label for="formatedDOB1" class="error">&#160;</label><br/>
+			<label for="email" class="error">&#160;</label>
+			<label for="telephone" class="error">&#160;</label> -->
+ 
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="fname">First Name*</label>
+					<div class="col-sm-9">
+						<input class="form-control" type="text" value="${user.name}" name="fname" tabindex="1" pattern="[a-zA-Z ]{2,}" placeholder="Please enter your first name" required="" autofocus="" title="It must contain only letters and a length of minimum 2 characters!"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="lname">Last Name*</label>
+					<div class="col-sm-9">
+						<input class="form-control" type="text" value="${user.lastName}" name="lname" tabindex="2" pattern="[a-zA-Z ]{2,}" placeholder="Please enter your last name" required="" autofocus="" title="It must contain only letters and a length of minimum 2 characters!"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label" for="formatedDOB1">Date of birth*</label>
+					<div class="col-sm-9">
+						<fmt:parseDate pattern="yyyy-MM-dd" value="${user.dateOfBirth}" var="formatedDOB"/>
+                    	<fmt:formatDate var="formatedDOB1" pattern="dd MMM yyyy" value="${formatedDOB}"/>
+						<input id="dateofbirth" tabindex="3"  class="form-control" type="text" value="${formatedDOB1}" name="dateofbirth" placeholder="Please select your date of birth" title="Please select a valid date of birth!" required="" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 col-xs-3 control-label" for="email">Email*</label>
+					<div class="col-sm-6 col-xs-6">
+						<input class="form-control" type="email" value="${user.email}" name="email" tabindex="4" placeholder="Please enter a valid email address" title="It must contain a valid email address e.g. 'someone@interestify.com' !" required="" />
+					</div>
+					<div class="col-sm-3 col-xs-3">
+						<select class="col-md-3 col-xs-3 form-control" name="showEmailCheck">
+						
+					 	   <c:if test="${user.showEmailCheck == 'true' }">
+							  <option value="${user.showEmailCheck}" selected='selected'>Show</option>
+							  <option value="false">Hide</option>
+						   </c:if>
+						   <c:if test="${empty user.showEmailCheck}">
+							  <option value="true">Show</option>
+							  <option value="false" selected='selected'>Hide</option>
+						   </c:if>
+						   <c:if test="${user.showEmailCheck == 'false' }">
+							  <option value="true">Show</option>
+							  <option value="${user.showEmailCheck}" selected='selected'>Hide</option>
+						   </c:if>
+						   	  
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 col-xs-3 control-label" for="telephone">Mobile*</label>
+					<div class="col-sm-6 col-xs-6">
+						<input class="form-control" type="text" value="${user.mobile}" name="telephone" pattern="[0-9]{10,}" tabindex="5" placeholder="Please enter your phone number" title="It must contain a valid phone number formed only by numerical values !" required="" />
+					</div>
+					<div class="col-sm-3 col-xs-3">
+							<select name="showTelephoneCheck" class="col-md-3 form-control">
+						
+						     <c:if test="${user.showTelephoneCheck == 'true' }">
+							  <option value="${user.showTelephoneCheck}" selected='selected'>Show</option>
+							  <option value="false">Hide</option>
+						   </c:if>
+						   <c:if test="${empty user.showTelephoneCheck}">
+							  <option value="true">Show</option>
+							  <option value="false" selected='selected'>Hide</option>
+						   </c:if>
+						   <c:if test="${user.showTelephoneCheck == 'false' }">
+							  <option value="true">Show</option>
+							  <option value="${user.showTelephoneCheck}" selected='selected'>Hide</option>
+						   </c:if>
+						   
+							</select>
+					</div>
+				</div>
+			
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit"  tabindex="6"  id="submitbasicprofile"  class="btn btn-primary">save changes</button>
+						<span class="profilesave">&#160;</span>
+					</div>
+				</div>
+
+		</form>
+	</div>
+</div>			
+</jsp:root>

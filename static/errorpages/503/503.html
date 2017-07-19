@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Interestify - Listing people near you with similar interests, e.g. Cricket, Tennis etc.</title>
+		<link href="/static/raw/css/common.css?v=1.1" type="text/css" rel="stylesheet"/><link href="/static/css/connect.css?v=2.1" type="text/css" rel="stylesheet"/><link href="/static/glyphter-font/css/Glyphter.css?v=5.2" type="text/css" rel="stylesheet"/><link href="/static/styles/screen.css?v=1.1" type="text/css" rel="stylesheet"/><link href="/static/raw/css/interestify.css?v=5.1" type="text/css" rel="stylesheet"/><link href="/static/m/css/interestify-bootstrap.css?v=1.2" type="text/css" rel="stylesheet"/><link href="/static/m/interestify-glyphicons.min.css?v=1.2" type="text/css" rel="stylesheet"/>
+
+</head>
+<body style="background-color: #EEEEEE">
+    <div>
+        <div>
+
+
+            <script type="text/javascript">
+                var DOMAIN = "/";
+            </script>
+
+           			<header>
+	<nav class="navbar navbar-default navbar-fixed-top">
+	<div id="navbar-example" class="navbar navbar-static">
+		<!-- <span style= "margin-top:7px;position:absolute; color:#F37220; font-size: 30px;">
+<img src="/static/images/Interestify_Logo_Small.png"></img></span> -->
+    	<span style="position:absolute; color:#F37220; font-size: 30px; padding-left: 20px">
+			<a class="logo" style="text-decoration: none;" href="#" onclick="switchToListingPageScreen()">
+				Interestify <span style=" color:#F37220; font-size: 10px;"> beta</span>
+			</a> 
+ 
+		<!--	<img src="/static/images/Interestify_Logo.png" onClick="switchToListingPageScreen()"></img> -->
+		</span>
+		
+		<div class="container" style="width: auto;">
+		 	<div class="navbar-header">
+          		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            		<span class="sr-only">interestify <span style=" color:#F37220; font-size: 10px;"> beta</span></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+            		<span class="icon-bar"></span>
+          		</button>
+        	</div>
+			<div class="navbar-collapse collapse off" style="height: auto;">
+				<ul class="nav navbar-nav navbar-right">
+					<li id="logged-in-user" class="noshow">
+						<div style="text-align: left; padding-top: 1%; width: 262px;">
+							<script src="//connect.facebook.net/en_US/all.js"></script>
+    <!-- Load the Facebook JavaScript SDK -->
+    <div id="fb-root" data-max-rows="1" data-size="small" data-show-faces="false" data-auto-logout-link="false" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://static.ak.facebook.com/connect/xd_arbiter/DU1Ia251o0y.js?version=41#channel=f3c66feddc&amp;origin=http%3A%2F%2Finterestify.com" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://s-static.ak.facebook.com/connect/xd_arbiter/DU1Ia251o0y.js?version=41#channel=f3c66feddc&amp;origin=http%3A%2F%2Finterestify.com" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script type="text/javascript" src="/static/js/facebook/login.js"></script>
+ 
+							<input style="width:300px" id="loginButton" type="image" src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-ash3/851558_153968161448238_508278025_n.png" value="" onclick="authUser();">
+						</div>
+					</li>
+					<li id="login-dropdown" class="dropdown closed noshow">
+						<a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret">&nbsp;</b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+			 
+							  
+							<li role="presentation" class="hidden-sm hidden-xs">
+									<input style="width:351px" id="loginButton" type="image" src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-ash3/851558_153968161448238_508278025_n.png" value="Login!" onclick="authUser();">
+							</li>
+						    <li role="presentation" class="divider hidden-sm hidden-xs "></li>  
+							<li role="presentation">
+								<div class="login_dropdown"><div class="col-lg-12" id="login-msgs">&nbsp;</div><form method="POST" action="/home/login" id="login-form" class="form-horizontal" novalidate="novalidate"><div class="form-group"><div class="col-lg-12"><input placeholder="Email" name="email" id="email" class="form-control" type="text">&nbsp;</div></div><div class="form-group"><div class="col-lg-12"><input placeholder="Password" name="password" id="password" class="form-control" type="password">&nbsp;</div></div><div class="form-group"><div class="col-lg-12"><button class="btn btn-default" id="submitlogin">Sign in</button><span class="loginsubmit">&nbsp;</span></div></div></form></div>
+							 </li>
+						</ul>
+					</li>
+					<hr class="intro-divider visible-phone">
+					<li id="sign-up-dropdown" class="dropdown closed noshow">
+						<a href="#" id="drop4" role="button" class="dropdown-toggle" data-toggle="dropdown">Sign Up<b class="caret">&nbsp;</b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="drop4">
+													  
+							<li role="presentation" class="hidden-sm hidden-xs">
+									<input style="width:351px" id="loginButton" type="image" src="https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-ash3/851558_153968161448238_508278025_n.png" value="Login!" onclick="authUser();">
+							</li>
+						    <li role="presentation" class="divider hidden-sm hidden-xs"></li>
+							<li role="presentation">
+								<div class="signup_dropdown"><form method="POST" action="signup-user" class="form-horizontal" id="signupuser-form" novalidate="novalidate"><div class="col-lg-12" id="signup-msgs">&nbsp;</div><div class="form-group"><div class="col-lg-6"><input placeholder="First Name" id="fname" name="fname" class="form-control" type="text">&nbsp;</div><div class="col-lg-6"><input placeholder="Last Name" id="lname" name="lname" class="form-control" type="text">&nbsp;</div></div><div class="form-group"><div class="col-lg-12"><input placeholder="Email/Username" id="userName" name="userName" class="form-control" type="text">&nbsp;</div></div><div class="form-group"><div class="col-lg-12"><input placeholder="Password" id="password" name="password" class="form-control" type="password">&nbsp;</div></div><div class="form-group"><div class="col-lg-12"><input required="" title="Please select a valid date of birth!" placeholder="Date of Birth" name="dateofbirth" id="dateofbirth" class="form-control" type="text"></div></div><div class="form-group "><div class="col-lg-12"><label class="radio-inline "><input value="M" id="gender-M" type="radio" name="gender"> Male</label><label class="radio-inline "><input value="F" id="gender-F" type="radio" name="gender"> Female</label></div></div><div class="form-group"><div class="col-lg-12"><button class="btn btn-default" type="submit" id="signup-user">Sign up</button><span class="signupsubmit">&nbsp;</span></div></div></form></div>
+							 </li>
+						</ul>
+					</li>
+					<hr class="intro-divider visible-phone">
+					<li id="forgot-password-dropdown" class="dropdown closed noshow">
+						<a href="#" id="drop5" role="button" class="dropdown-toggle" data-toggle="dropdown">Forgot Password<b class="caret">&nbsp;</b></a>
+						<ul class="dropdown-menu" role="menu" aria-labelledby="drop5">
+							<li role="presentation">
+								<div class="forgot_dropdown"><div id="forgot-msgs">&nbsp;</div><form method="POST" action="/forgotpassword" id="forgot-password-form" class="form-horizontal" novalidate="novalidate"><div class="form-group"><div class="col-lg-12"><input placeholder="Email" name="email" id="email" class="form-control" type="text">&nbsp;</div></div><div class="form-group"><div class="col-lg-12"><button class="btn btn-default" id="forgotlogin">Forgot Password</button><span class="forgotsubmit">&nbsp;</span></div></div></form></div>
+							 </li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!-- /.nav-collapse -->
+		</div>
+		<!-- /.container -->
+	</div>
+</nav>
+</header>
+        </div>
+        <div  style="min-height: 570px; background-color: #F8F8F8; padding-top: 4%">
+  
+            <style type="text/css">
+div.maintainence {
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    color: #EC018C;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 2% auto auto;
+    padding: 7%;
+    text-align: center;
+    width: 60%;
+}
+</style>
+                <div class="maintainence">
+                    Our servers are down for maintainence. We will be up soon.
+                    <br/>
+                    Kindly bear with us!!!
+                </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="pull-left">
+                    <p class="logo-footer copyright  small">Copyright &copy;
+                        connect me 2013</p>
+                </div>
+                <div class="pull-right">
+                    <div class="col-lg-12">
+                        <ul class="list-inline">
+                            <li><a href="/">Home</a></li>
+                            <li class="footer-menu-divider"><span
+                                style="color: #EC018C;"><b>&#160;| &#160;</b> </span></li>
+                            <li><a href="/pages/aboutus">about us</a></li>
+                            <li class="footer-menu-divider"><span
+                                style="color: #EC018C;"><b>&#160;| &#160;</b> </span></li>
+                            <li><a href="/pages/contactus">contact</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div style="clear: both"></div>
+
+    </div>
+    	<script src="/static/m/js/jquery.c.min.js?v=2.2" type="text/javascript"></script>
+			<script src="/static/js/twiter/js/bootstrap.min.js?v=2.2" type="text/javascript"></script>
+			<script src="/static/js/html5utils/store.min.js" type="text/javascript"></script>
+			<script src="/static/m/interstify-search-results.min.js?v=3.2"></script>
+			<script src="/static/m/js/index.min.js?v=4.1"></script>
+</body>
+</html>

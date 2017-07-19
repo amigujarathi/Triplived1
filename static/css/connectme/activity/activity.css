@@ -1,0 +1,23 @@
+/* div#form-section p.activity-field,div.modal-content div.modal-header,div.modal-content div.modal-body{
+	padding-bottom: 0px;
+}
+
+tr#no-activity-registered td {
+	color: #428bca;
+	font-weight: bold;
+}
+
+.activity-msg {
+	color: #FF0000;
+	font-size: 16px;
+	font-weight: bold;
+	padding-bottom: 16px;
+	text-align: left;
+}
+
+tbody#user-intrested-activity  td a {
+	cursor: pointer;
+	text-decoration: none;
+} */
+
+ 

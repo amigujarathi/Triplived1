@@ -1,0 +1,48 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<spring:eval expression="logged_in_user" var="user"></spring:eval>
+	<c:set value="${user_images}/${user.id}/${user.id}.jpg" var="user_image_path" />
+	
+	<div>
+		<div class="row" style="padding-top: 10px;">
+			<div class="col-md-3">
+				<div class="thumbnail" >
+					<img  id = "user-profile-image" style="max-width: 250px; max-height: 300px"
+						src="${user_image_path}"
+						class="img-responsive img-rounded" alt=".... your photo here .... " />
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<textarea  id="about-me-description" rows="5" cols="80" class="form-control" name="note" placeholder="Tell us a bit about yourself, why you joined interestify, what sort of buddy are you looking for. " >${user.aboutMe}</textarea>
+				</div>
+			</div>
+			<div class="col-md-2" style="padding-top: 1%;">Tell us a bit about yourself, why you joined interestify, what sort of activities/people are you interested in. </div>
+		</div>
+		<div class="row" style="padding-top: 10px;">
+			<div class="col-md-4 col-xs-4">
+				<span class="btn btn-success fileinput-button   btn-sm"> 
+					<span>Upload Photo</span>
+					<!-- The file input field used as target for the file upload widget -->
+					<input  accept="image/*" id="generalfileupload" type="file" name="fileToUpload"  multiple="" />
+				</span>
+				<span class="image-upload-save">&#160;</span>
+			</div>
+			<div class="col-md-4 col-xs-4">
+				<button type="button" id="submitbasicprofiledescription" class="btn btn-primary  btn-sm pull-right">save changes</button>
+			</div>
+			<div class="col-md-4 col-xs-4" >
+				<label class="left-column"  >
+					<span class="basicprofiledescsave">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>
+				</label>
+			</div>
+		</div>
+	</div>
+</jsp:root>

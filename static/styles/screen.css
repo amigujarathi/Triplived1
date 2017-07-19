@@ -1,0 +1,297 @@
+/*----- Shadow -----*/
+.shadow_genrator_1 {
+	-moz-box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+	-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+	box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+	border-radius: 3px;
+}
+
+.listing_section {
+	padding: 15px;
+}
+
+/*------ User-Listing ------*/
+.margin_user_attributes {
+	margin: 0 0 2px;
+}
+
+.listing_section.hotel {
+	padding: 0px;
+}
+
+.user_listing {
+	padding: 10px;
+}
+
+.msgBoxFrom,.success,.warning, /* .error, */ .validation,.msgBoxTo {
+	border: 1px solid;
+	margin: 3px 0;
+	padding: 10px 10px 10px 10px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	border-radius: 6px;
+}
+
+.msgBoxFrom {
+	color: #00529B;
+	background-color: #BDE5F8;
+	float: left;
+	width: 80%;
+}
+
+.msgBoxTo {
+	color: #4F8A10;
+	background-color: #DFF2BF;
+	float: right;
+	width: 80%;
+	margin-right: 15px;
+}
+
+ul li.usersInMsgHistoryListLi {
+	
+}
+
+.unreadMsgInList {
+	background-color: #FEEFB3;
+}
+
+ul.usersInMsgHistoryListUl {
+	height: 99% !important;
+	width: 99% !important;
+	overflow-x: none;
+}
+
+ul.usersInMsgHistoryListUlWithYScroll {
+	height: 99% !important;
+	overflow-y: scroll;
+	width: 99% !important;
+	overflow-x: none;
+}
+
+ul.listOfHistoryMsgUl {
+	height: 99% !important;
+	width: 99% !important;
+	overflow-x: none;
+}
+
+ul.listOfHistoryMsgUlWithYScroll {
+	height: 99% !important;
+	overflow-y: scroll;
+	width: 99% !important;
+	overflow-x: none;
+}
+
+.msgInHistory {
+	height: 150px;
+	width: 600px;
+}
+
+ul li.chatList {
+	background-color: #BDE5F8;
+}
+ 
+div.container-fluid  div#sport_dropdown,div.container-fluid div#region_dropdown,div.container-fluid div#region_dropdown-2
+	{
+	display: inline;
+}
+
+/* ******************************************************************** */
+/* Clearfix: http://csscreator.com/        */
+/* ******************************************************************** */
+.clearFix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearFix {
+	display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+* html .clearFix {
+	height: 1%;
+}
+
+.clearFix {
+	display: block; /* width:70%;  */
+}
+/* End hide from IE-mac */
+.clearFix2:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	width: 200px;
+}
+
+.clearFix2 {
+	display: inline-block;
+}
+
+/* Hides from IE-mac \*/
+* html .clearFix2 {
+	height: 1%;
+}
+
+.clearFix2 {
+	display: block;
+	width: 200px;
+}
+
+.flR {
+	float: right;
+}
+
+.flL {
+	float: left;
+}
+
+.append_bottomHalf {
+	margin-bottom: 8px;
+}
+
+.msgScreenHead {
+	padding-top: 10px;
+	display: inline-block;
+}
+
+.paddingTd {
+	padding: 10px 10px 10px 10px;
+}
+/* .styleTr{border: 1px solid #CCCCCC; background: none repeat scroll 0 0 #F0F0F0;} */
+.styleTr {
+	
+}
+
+tr {
+	margin-bottom: 5px;
+}
+
+.listing_div {
+	background-color: #FFFFFF;
+	opacity: 1.0
+}
+
+.msgHistory_listing_div {
+	background-color: #E1E1E1;
+	border-radius: 3px;
+	height: 83%;
+	opacity: 0.91;
+}
+
+.backgroundColorToMsgPerson {
+	background-color: #A9A9A9;
+	border: 1px solid #A9A9A9 !important
+}
+
+.backgroundColorOfLoadLink {
+	background-color: #E8E8E8;
+}
+
+.switchToHistoryMsgScreenBtnColor {
+	background-color: #d24105;
+}
+
+li.usersInMsgHistoryListLi {
+	border-bottom: 1px solid #A9A9A9;
+	border-right: 1px solid #A9A9A9;
+	float: left;
+	padding-bottom: 11px;
+	padding-top: 10px;
+	width: 100%;
+}
+
+ul.msg-list {
+	list-style: none;
+	padding: 0 0 0 10px;
+}
+
+div.linkPersonMsgName {
+	padding-left: 12px;
+}
+
+div.linkPersonMsgName a,a.person-detail {
+	cursor: pointer;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.slimScrollDiv {
+	/* float:left !important; */
+	
+}
+
+span.msg-date {
+	color: #EC018C;
+}
+
+div.msg-searchbox {
+	height: 14%;
+	width: 100%;
+}
+
+a.cross_icon {
+	position: absolute;
+	right: -12px;
+	top: -10px;
+	z-index: 1000;
+}
+
+.tooltip {
+	margin: 8px;
+	padding: 8px;
+	border: 1px solid blue;
+	background-color: yellow;
+	position: absolute;
+	z-index: 2;
+}
+
+.widget-modified {
+	background: none !important;
+	border: none !important;
+}
+
+.index-font {
+	font-size: 20px;
+}
+
+.td-index-font {
+	float: left;
+}
+
+.suggestDetails {
+	min-height: 66px;
+	border: 3px solid #25AD9F;
+	background-color: #20B2AA;
+}
+
+.suggestDetailsProfessionText {
+	float: left;
+	padding-top: 10px !important;
+}
+
+.suggestDetailsProfessionInput {
+	padding-top: 15px !important;
+	padding-right: 20px !important;
+}
+
+.suggestDetailsProfessionDropdown {
+	background-color: #20B2AA;
+}
+
+div h4.filterboxcolor {
+	color: #F37220;
+}
+
+a.genderfilter {
+	text-decoration: none;
+	cursor: default;
+}
+
+div#listingPageId div.lm {
+	padding-top: 10px
+}

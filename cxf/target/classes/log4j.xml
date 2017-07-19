@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+
+	<appender name="triplived-log" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/usr/local/apache-tomcat-7.0.59/triplived.log" />
+		<param name="Append" value="true" />
+		<param name="immediateFlush" value="true" />
+		<param name="MaxBackupIndex" value="5" />
+		<param name="MaxFileSize" value="10MB" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] %p %t %c - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="spring-log" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="/usr/local/apache-tomcat-7.0.59/triplived-spring.log" />
+		<param name="Append" value="true" />
+		<param name="immediateFlush" value="true" />
+		<param name="MaxBackupIndex" value="5" />
+		<param name="MaxFileSize" value="10MB" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] %p %t %c - %m%n" />
+		</layout>
+	</appender>
+
+
+	<logger name="org.springframework.core" additivity="false">
+		<level value="TRACE" />
+		<appender-ref ref="spring-log" />
+	</logger>
+
+	<logger name="com.connectme" additivity="false">
+		<level value="TRACE" />
+		<appender-ref ref="triplived-log" />
+	</logger>
+	
+	<logger name="com.triplived" additivity="false">
+		<level value="TRACE" />
+		<appender-ref ref="triplived-log" />
+	</logger>
+
+</log4j:configuration>

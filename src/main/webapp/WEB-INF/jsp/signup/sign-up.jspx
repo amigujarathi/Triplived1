@@ -1,0 +1,50 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<div class="signup_dropdown">
+		<form id="signupuser-form" class="form-horizontal" action="signup-user" method="POST" >
+			<div id = "signup-msgs" class="col-lg-12">&#160;</div>
+			<div class="form-group">
+				<div class="col-lg-6">
+					<input type="text" class="form-control" name="fname" id="fname" placeholder="First Name">&#160;</input>
+				</div>
+				<div class="col-lg-6">
+					<input type="text" class="form-control" name="lname" id="lname" placeholder="Last Name">&#160;</input>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-12">
+					<input type="text" class="form-control" name="userName" id="userName" placeholder="Email/Username">&#160;</input>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-12">
+					<input type="password" class="form-control" name="password" id="password"  placeholder="Password">&#160;</input>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-12">
+					<input type="text" class="form-control" id="dateofbirth" name="dateofbirth"   placeholder="Date of Birth" title="Please select a valid date of birth!" required=""   />
+				</div>
+			</div>
+			<div class="form-group ">
+				<div class="col-lg-12">
+					<label class="radio-inline "> <input name="gender" type="radio" id="gender-M" value="M" /> Male</label>
+					<label class="radio-inline "> <input name="gender" type="radio" id="gender-F" value="F" /> Female</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-12">
+					<button id="signup-user" type="submit" class="btn btn-default">Sign up</button>
+					<span class="signupsubmit">&#160;</span>
+				</div>
+			</div>
+		</form>
+	</div>
+</jsp:root>

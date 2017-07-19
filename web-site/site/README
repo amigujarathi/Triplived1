@@ -1,0 +1,3 @@
+index.html : should be directly applied to /usr/local/apache-tomcat-7.0.59/webapps/ROOT/index.jsp
+privacy-policy.html : http://triplived.com/static/site/resources/privacy-policy.html
+termsofuse: http://triplived.com/static/site/resources/terms-of-use.html

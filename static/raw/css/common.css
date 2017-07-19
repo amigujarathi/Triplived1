@@ -1,0 +1,269 @@
+/**********INDEX.CSS************************************************************/
+
+@media (max-width: 480px) {
+
+        .modal {
+            height: 500px; /* Set a default max height of the modal (adjusted later)*/
+            position: fixed; /* Display modal in the centre of your screen */
+            overflow-y: scroll; /*  Ensure that the modal is scroll-able */
+            -webkit-overflow-scrolling: touch; /* Avoid having to use 2 finger scroll on iOS    */
+        }
+        .modal.fade.in{
+            top: 5px; /* Use more screen real estate */
+        }
+        .modal-body{
+            /* Increase the max height of the modal body to try & avoid both it,
+             * and the modal container having scroll bars which results in odd behavior */ 
+            max-height: 2400px; 
+        }   
+    }
+
+    /* Now adjust the height so it handles various screen sizes & orientations */
+    /* You could make this as granular as you like, or have it more granular at common screen sizes
+     * but it should start at the height we set on .modal (i.e. 500px) & work down */
+    @media (max-width: 480px) and (max-height: 500px){.modal{ height: 450px}}
+    @media (max-width: 480px) and (max-height: 450px){.modal{ height: 400px}}
+    @media (max-width: 480px) and (max-height: 400px){.modal{ height: 350px}}
+    @media (max-width: 480px) and (max-height: 350px){.modal{ height: 300px}}
+    @media (max-width: 480px) and (max-height: 300px){.modal{ height: 250px}}
+    @media (max-width: 480px) and (max-height: 250px){.modal{ height: 200px}}
+    @media (max-width: 480px) and (max-height: 200px){.modal{ height: 150px}}
+    
+.paddingTd {
+		padding: 10px;
+		text-align: left;
+ 
+	}
+	
+	.paddingTd p i {
+		font-size:20px;
+	}
+	
+	
+	td-index-font {
+		float: left;
+	}
+	
+	.index-font {
+		font-size: 20px;
+	}
+
+
+
+#ww #cafe {
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    font: 0/0 serif;
+    text-shadow: none;
+    color: transparent;
+    background-size: 100%;
+    background-position: 50% 0%;
+    background-repeat: no-repeat;
+}
+#ww #cafe .inner {
+    padding-top: 41.35%; /* height/width of image */
+    display: block;
+    height: 0;
+}
+
+#ww span#bg {
+	position: absolute;
+	top: 4%;
+	left: 0;
+	padding-left: 15px;
+	font-size: 120px;
+	line-height: 110px;
+	margin: 0;
+	text-shadow: rgba(128,122,110,0.8) 3px 3px 3px;
+}
+
+
+
+@media only screen and (max-width: 320px) {
+    /* Small screen, non-retina */
+    #ww #cafe { background-image: url("/static/poster/poster.jpg"); }
+}
+@media only screen and (min-resolution: 2dppx) and (max-width: 320px) {
+    /* Small screen, retina */
+    #ww #cafe { background-image: url("/static/poster/poster.jpg"); }
+}
+@media only screen and (min-width: 321px) and (max-width: 538px) {
+    /* Medium screen, non-retina */
+    #ww #cafe { background-image: url("/static/poster/poster.jpg"); }
+}
+@media
+only screen and (min-resolution: 2dppx) and (min-width: 321px) and (max-width: 538px) {
+    /* Medium screen, retina */
+    #ww #cafe { background-image: url("/static/poster/poster.jpg"); }
+}
+@media
+only screen and (min-resolution: 2dppx) and (min-width: 539px) {
+    /* Large screen, retina */
+    #ww #cafe { background-image: url("/static/poster/poster.jpg"); }
+}
+
+
+#ww #cafe { background-image: url("/static/poster/poster.jpg"); }
+
+/**********INDEX.CSS************************************************************/
+
+
+/*** HEADER CSS **************************/
+
+nav.navbar {
+	position:relative;
+}
+@media only screen and (min-width : 480px) {
+	.dropdown-menu {
+    font-size: 14px !important;
+  }
+}
+
+div#mob-header a span.glyphicons {
+	padding:1px;
+}
+div#mob-header div {
+	height:25px;
+	text-align: center;
+}
+
+ul.header li [class*="col"] i, ul.header li [class*="col"] i:before, div#mob-header a span.glyphicons i, div#mob-header a span.glyphicons i:before {
+    color: #25ad9f;
+    font-size: 24px;
+}
+
+@media (min-width: 992px) {
+	/* span.conversation,  span.home, span.message_new{
+ 		margin-top: 18px;
+	}
+ */}
+
+ul.header li [class*="col"] i, ul.header li [class*="col"] i:before {
+color: #25ad9f;
+font-size: 24px;
+}
+
+nav.navbar div.form-group { margin-bottom: 0;}
+
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    border-color: #efefef;
+    border-radius: 0;
+    box-shadow: none !important;
+    font-size: 13px;
+}
+
+input[type="text"]:focus,input[type="text"]:active,input[type="text"]:hover
+	{
+	background-color: #f7f7f7
+}
+
+textarea:focus,input[type="text"]:focus,input[type="password"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="time"]:focus,input[type="week"]:focus,input[type="number"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="color"]:focus,.uneditable-input:focus
+	{
+	border-color: #efefef;
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important
+}
+
+.visible-phone {
+    display: none !important;
+}
+
+/*** HEADER CSS **************************/
+
+
+.panel-default > .panel-heading {
+    background-color: #ffffff !important;
+}
+
+p {
+    line-height: normal;
+    margin: 0 0 10px;
+}
+
+/*** TERMS AND CONDITION // ABOUT US // CONTACT US PAGES**************************/
+
+/*************** LAYOUT ******************************************/
+
+
+html,
+body {
+	margin:0;
+	padding:0;
+	height:100%;
+	
+}
+#w {
+	min-height:100%;
+	position:relative;
+	background-color: #F8F8F8;
+}
+#h {
+	background:#ededed;
+	/* padding:10px; */
+}
+#c {
+	padding-bottom:10px; /* Height of the footer element */
+	min-height: 500px
+}
+#f {
+	background:#EEEEEE;
+	width:100%;
+	height:60px;
+	position:static;
+	bottom:0;
+	left:0;
+}
+
+#landingImage{
+  background: url(static/images/test/poster3.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/*************** LAYOUT ******************************************/
+
+
+
+/**********MESSAGE SCREEN******** EVENTS SCREEN****************************/
+div#msg-area-type{
+    position:relative;
+}
+
+div#msg-area-type button{
+ bottom:10px;
+ right:10px;
+ margin-left: 2px;
+ margin-bottom: 2px;
+}
+
+div#msg-area-type{
+    position:relative;
+}
+
+div#msg-area-type button{
+ bottom:10px;
+ right:10px;
+ margin-left: 2px;
+ margin-bottom: 2px;
+}
+
+/**********MESSAGE SCREEN************************************/
+
+/***********contact us************************/
+form#contactusform label.error {
+		font-size: 11px;
+		color:red;
+	}
+	form div#smsgs{
+	font-size: 110%;
+    font-weight: bold;
+    padding-left: 12px;
+	}
+	
+/***************************************/	
+
+

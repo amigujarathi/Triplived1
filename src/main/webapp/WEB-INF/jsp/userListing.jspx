@@ -1,0 +1,119 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+		
+ 
+ 	<c:set var="user"  value="${sessionScope['logged_in_user']}" scope="request"/>
+	
+	<spring:eval var="facebookUser" expression="T(com.connectme.domain.UserFrom).FACEBOOK" scope="request"/>
+	<spring:eval var="siteUser" expression="T(com.connectme.domain.UserFrom).SITE" scope="request" />
+	
+		
+<style  type="text/css" >
+
+._zv{bottom:0;left:0;white-space:nowrap; padding-left: 12px;}
+
+</style>
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	
+	<div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+    		<div ng-init="searchDivClose = true" ng-show="searchDivClose">
+				<div ng-hide = "peopleListLoaded">
+					<div style="top: -39px; vertical-align: middle; margin-left: 37%; height: 49px;">
+						<img src="${images_url}/../ajax-loader.gif"></img>
+					</div>
+					<div style="height: 50px; font-size: 130%; margin-left: 10%;">Please wait while we find you people of your interests !!!
+					</div>
+				</div>
+			</div>	
+			
+	       <div class="activity">
+                <div class="table-responsive">		
+                	
+	             <div ng-repeat="person in activityToPeopleList | filter:filterPersons(loggedInPersonId)" ng-show="peopleListLoaded" 
+	             		class="clearFix append_bottomHalf shadow_genrator_1 listing_div">
+		          <div >  
+		            <div class="pull-left col-md-2 col-sm-4 col-xs-4" style="padding:2px">
+	                		<jsp:include page="userListingImage.jspx" />
+		            </div>
+		            <div class="user_listing col-md-10 col-sm-8 col-xs-8" style="min-height: 90px; padding-top:10px;">
+		                <div class="hidden-sm hidden-xs" style="min-height: 66px">
+		                    <span style="display:inline; padding-left: 6px;" class=""> 
+		                        <a ng-click="openPersonDetails(person.personId, person.personName)"    href="#" 
+		                        	style="padding-left: 10px;">{{person.personName}}</a>   
+		                        <span ng-show="person.personGender == 'M'" style="padding-left: 12px"><i class="fa fa-male">&#160;</i></span>
+						 		<span ng-show="person.personGender == 'F'" style="padding-left: 12px"><i class="fa fa-female">&#160;</i></span>  
+		                    </span>
+		                    <button style="display:inline; padding-left: 12px" class="btn btn-primary flR " ng-click="open(person.personId, ${isLoggedIn})">Send Message</button>
+							
+			            </div>
+			            <div class="hidden-md hidden-lg" style="min-height: 50px">
+		                    <span style="display:inline; padding-left: 2px;" class="col-xs-6"> 
+		                        <a ng-click="openPersonDetails(person.personId, person.personName)"     href="#" 
+		                        	style="padding-left: 2px;">{{person.personName}}</a>   
+		                        <span ng-show="person.personGender == 'M'" style="padding-left: 4px"><i class="fa fa-male">&#160;</i></span>
+						 		<span ng-show="person.personGender == 'F'" style="padding-left: 4px"><i class="fa fa-female">&#160;</i></span>  
+		                    </span>
+		                    <button style="display:inline; padding-left: 12px" class="btn btn-primary flR col-xs-6" ng-click="open(person.personId, ${isLoggedIn})">Message</button>
+							
+			            </div>
+		                <div class="_zv hidden-sm hidden-xs">
+			   					<div class="col-sm-6">
+			   									<span class="innerR innerT text-right  text-muted ng-binding">
+													{{person.city}},  {{person.street}}
+												</span>
+												<span class="innerR innerT text-right  text-muted ng-binding">
+													 Last Active: {{getMsgTime(person.lastSeenTime)}}
+												</span>
+								</div>
+								
+		                </div>
+		                <div class="_zv hidden-md hidden-lg col-xs-6">
+			   					<div class="">
+			   									<span class="innerR innerT text-right  text-muted ng-binding">
+													 {{person.street}}
+												</span>
+								</div>	
+								<div>			
+												<span class="innerR innerT text-right  text-muted ng-binding">
+													 Last Active: {{getMsgTime(person.lastSeenTime)}}
+												</span>
+								</div>
+								
+		                </div>
+			        </div>
+			      </div> 
+			       
+			     </div>
+                </div>	
+            </div>
+		<![CDATA[
+			
+			<div  ng-show="peopleListLoaded && !allResultsLoaded && !lazyLoadingResults && allFieldsSelected">
+	    		<a class="flL button backgroundColorOfLoadLink hidden-xs hidden-sm" href="javascript:void(0);" 
+		    			ng-click="loadListingResults(selectedActivity,selectedLocation,selectedCity,false);lazyLoadingResults = true">Show More
+	    		</a>
+	    		<a class="flL button backgroundColorOfLoadLink hidden-lg hidden-md font-size-mobile" href="javascript:void(0);" 
+		    			ng-click="loadListingResults(selectedActivity,selectedLocation,selectedCity,false);lazyLoadingResults = true">Show More
+	    		</a>
+			</div>
+			<div ng-show="lazyLoadingResults" class="progress-save">
+			     <div style="vertical-align: middle; margin-left: 50%; height: 49px; position:relative;">
+			    	<img src="${images_url}/../ajax-loader.gif"></img>
+				</div>
+			</div>
+			<div ng-show="peopleListLoaded && allResultsLoaded" class="hidden-xs hidden-sm">
+	    		<label class="flL button backgroundColorOfLoadLink" >{{displayMsg}}</label>
+	    	</div>
+	    	<div ng-show="peopleListLoaded && allResultsLoaded" class="hidden-lg hidden-md">
+	    		<label class="flL button backgroundColorOfLoadLink font-size-mobile">{{displayMsg}}</label>
+	    	</div>
+	    	
+    	]]>
+    	
+    	</div>
+</jsp:root>

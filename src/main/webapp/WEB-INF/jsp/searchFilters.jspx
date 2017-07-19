@@ -1,0 +1,91 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:spring="http://www.springframework.org/tags"
+    xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:directive.page contentType="text/html;charset=UTF-8" />
+    <jsp:output omit-xml-declaration="yes" />
+
+<div class="col-md-3 col-sm-3 col-xs-3 hidden-xs hidden-sm">
+    <div id="fixed_parttop">
+        <!--
+            <div id="region_dropdown-2" class='container-fluid flR' >
+                 <input placeholder="Places In Your Region:" type="text" ng-model="selectedLocation" typeahead-on-select="loadListingResults(selectedSport.sportId,selectedLocation.id)" typeahead="location as location.street + ' (' + location.count + ')' for location in activityToRegionList | filter:{street: $viewValue}">
+            </div>
+       
+        <div class="clearFix filter_search shadow_genrator_1"   style="top: 0px; background-color: #FFFFFF" ng-show="activityToPeopleList.length > 0">
+            <div class="filterbox">Filters</div>
+            <div id="filter_data">
+            <div class= "genderfilterbox"> Gender</div>
+                <ul>
+                    <li class="ui-menu-item clearFix">
+                        <a class="genderfilter" href="#"> 
+                            <input type="checkbox" ng-model="genderList['M']" ng-change="loadListingResults(myControllerActivityId,myControllerLocationId,true,'genderFilter')"  class="flL" /> 
+                            <span class="type_info">&#160;&#160;<a href="#"><i class="fa fa-male">&#160;</i> Male </a></span>
+                        </a>
+                    </li>
+                    <li class="ui-menu-item clearFix">
+                        <a class="genderfilter" href="#">
+                            <input type="checkbox" ng-model="genderList['F']" ng-change="loadListingResults(myControllerActivityId,myControllerLocationId,true,'genderFilter')" class="flL" />
+                            <span class="type_info">&#160;&#160;<a href="#"><i class="fa fa-female">&#160;</i> Female </a></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+ -->
+		<div class="row hidden-lg hidden-md hidden-sm hidden-xs">
+			<div class="col-md-12 clearFix filter_search shadow_genrator_1" ng-hide="showingRecentlyJoinedList">
+				<!-- Widget -->
+				<div class="widget widget-heading-simple widget-body-white">
+
+					<!-- Widget heading -->
+					<div class="widget-head">
+						<h4 class="heading filterboxcolor">Gender</h4>
+					</div>
+					<!-- // Widget heading END -->
+
+					<div class="widget-body">
+						<!-- filter items list -->
+		                <ul>
+		                    <li class="ui-menu-item clearFix">
+		                        <a class="genderfilter" href="#"> 
+							<input type="checkbox" ng-model="genderList['M']" ng-change="loadListingResults(selectedActivity,selectedLocation,selectedCity,true,'genderFilter')"  class="flL" /> 
+		                            <span class="type_info">&#160;&#160;<a href="#"><i class="fa fa-male">&#160;</i> Male </a></span>
+		                        </a>
+		                    </li>
+		                    <li class="ui-menu-item clearFix">
+		                        <a class="genderfilter" href="#">
+							<input type="checkbox" ng-model="genderList['F']" ng-change="loadListingResults(selectedActivity,selectedLocation,selectedCity,true,'genderFilter')" class="flL" />
+		                            <span class="type_info">&#160;&#160;<a href="#"><i class="fa fa-female">&#160;</i> Female </a></span>
+		                        </a>
+		                    </li>
+		                </ul>
+		                <!-- filter items list -->
+					</div>
+				</div>
+				<!-- // Widget END -->
+			</div>
+		</div>
+
+		<!-- Stadiums in City-->
+		<!-- 
+        <div class="clearFix filter_search shadow_genrator_1"  style="top: 0px; background-color: #FFFFFF" ng-show="peopleListLoaded">
+            <div class="filterbox">{{selectedSport.sportName}} Stadiums in {{selectedCity.city}}</div>
+            <div id="stadiumsincity">&#160;</div>
+        </div>
+        -->
+        
+      
+    	 <!--  jsp:include page="/WEB-INF/jsp/stadium/stadiumsInCityWidget.jspx" / -->
+    	<c:if test="${isLoggedIn == true}">
+        <jsp:include page="/WEB-INF/jsp/questions/sportsplayed.jspx" />
+        </c:if>
+        <jsp:include page="/WEB-INF/jsp/stadiumSectionOnListing.jspx" />
+        
+
+    </div>
+    </div>
+    
+</jsp:root>

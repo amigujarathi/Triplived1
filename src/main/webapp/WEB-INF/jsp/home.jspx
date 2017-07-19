@@ -1,0 +1,142 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<spring:url value="/static/js" var="js_url" />
+	<spring:url value="/static/styles" var="styles_url" />
+	<spring:url value="/static/css" var="static_css" />
+	<spring:url value="/static/images" var="images_url" />
+
+
+	<link rel="stylesheet" href="${static_css}/twiter/bootstrap.css?v=1" > <!-- css --> </link> 
+	<link rel="stylesheet" href="${static_css}/connect.css?v=2">	<!-- css -->	</link>
+	 
+ 
+	<link type="text/css" rel="stylesheet"	href="${styles_url}/jquery.galleryview.css"><!-- CSS  --></link>
+	<link rel="stylesheet" type="text/css" href="${styles_url}/screen.css"><!-- CSS  --></link>
+	<link rel="stylesheet" type="text/css" href="${styles_url}/seatmap.css"><!-- CSS  --></link>
+	<link type="text/css" rel="stylesheet"	href="${styles_url}/jquery.ui.dialog.css"><!-- CSS  --></link>
+
+	<!-- scripts -->
+	<script type="text/javascript" src="${js_url}/jquery.min.js"><!--  Script--></script>
+	<script type="text/javascript" src="${js_url}/jquery.timers-1.2.js"><!--  Script-->	</script>
+	<script type="text/javascript" src="${js_url}/jquery.galleryview.js"><!--  Script--></script>
+	<script type="text/javascript" src="${js_url}/ui/jquery.ui.core.js"><!--  Script-->	</script>
+	<script type="text/javascript" src="${js_url}/ui/jquery.ui.widget.js"><!--  Script--></script>
+	<script type="text/javascript" src="${js_url}/ui/jquery.ui.mouse.js"><!--  Script--></script>
+	<script type="text/javascript" src="${js_url}/ui/jquery.ui.position.js"><!--  Script-->	</script>
+	<script type="text/javascript" src="${js_url}/ui/jquery.ui.dialog.js"><!--  Script-->	</script>
+	<script type="text/javascript" src="${js_url}/jquery.custom.js?v=1"><!--  Script-->	</script>
+	<script type="text/javascript" src="${js_url}/jquery-ui.min.js"><!--  Script-->	</script>
+	<script type="text/javascript" src="${url}/angular-1.2.min.js"></script>
+	<script type="text/javascript"	src="${js_url}/ui-bootstrap-tpls-0.6.0.min.js"><!--  Script--></script>	
+	<script type="text/javascript" src="${js_url}/site_angular.js?v=2"><!--  Script-->	</script>
+	<script type="text/javascript" src="${js_url}/home/home.js?v=1"><!--  Script-->	</script>
+
+	<!-- /scripts -->
+	<script type="text/javascript">
+		jQuery(function($) {
+			$('.addroom_button').click(
+					function(e) {
+						$('#room_details').clone().removeAttr("id").append(
+								$('<a class="close_room" href="#"></a>'))
+								.appendTo('#addroom_container');
+
+						e.preventDefault();
+
+					});
+
+			$("body").on('click', ".close_room", function(e) {
+				$(this).closest('.room_details').remove();
+				e.preventDefault();
+				stopPropogate(e);
+			});
+
+		});
+	</script>
+
+	<body ng-app="projectModule">
+
+		<div ng-init="selectedHtlName ='Hotel Ayan'">&#160;</div>
+
+		<!--ayan-->
+		<div ng-controller="myController">
+
+
+			<!-- /header -->
+			<!-- Content -->
+			<div id="searchResults" style="padding: 10px; padding-left: 25px;">
+				<div id="content" class="content" ng-controller="myController">
+					<div class="wrapper">
+
+
+						<div class="overlap_height">&#160;</div>
+
+						<div id="sport_dropdown" class='container-fluid'>
+							<!-- <pre>Model: {{selected| json}}</pre> -->
+							<p>Select Sport:</p>
+							<input type="text" ng-model="selectedSport"
+								typeahead-on-select="showSelectedValue(selectedSport.sportId);clearLocationSearchBox();"
+								typeahead="state as state.sportName for state in activityList | filter:{sportName: $viewValue}">
+							&#160;</input>
+						</div>
+
+
+
+						<div id="region_dropdown" class='container-fluid'>
+							<!-- <pre>Model: {{selected| json}}</pre> -->
+							<p>Select Region:</p>
+							<input type="text" ng-model="selectedLocation"
+								typeahead-on-select="loadListingResults(selectedSport.sportId,selectedLocation.id)"
+								typeahead="location as location.street + ' (' + location.count + ')' for location in activityToRegionList | filter:{street: $viewValue}">&#160;</input>
+						</div>
+
+
+
+						<div
+							class="listing_section hotel shadow_genrator_1 clearFix append_bottomHalf"
+							ng-repeat="person in activityToPeopleList"
+							ng-show="peopleListLoaded">
+
+							<div class="user_listing flL">
+
+								<div class="flL user_block_info">
+
+									<div class="clearFix marBot3">
+
+										<!-- <span class="flL user_pics"><img src="images/riya.jpg" alt="user_pic" /></span> -->
+
+										<div class="flL user_description">
+											<p
+												class="font_12 red RobotoRegular marBot3 margin_user_attributes">{{person.personName}}</p>
+											<!-- <p class="fontSize12 grey marBot5">Active Scale <span class="defaultstar flL"><span class="fourstar flL"></span></span> <span class="sepratorone flL"></span></p> -->
+											<p class="fontSize12 grey marBot1 margin_user_attributes">{{person.personGender}}</p>
+											<p class="fontSize12 grey marBot1 margin_user_attributes">Last
+												Logged into :</p>
+											<p>
+												<a href="#" class="fontSize11 hotel_buspopup_open">+
+													View Details</a>
+											</p>
+
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</body>
+
+
+</jsp:root>

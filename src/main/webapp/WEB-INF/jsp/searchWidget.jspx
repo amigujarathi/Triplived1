@@ -1,0 +1,120 @@
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+
+	<style type="text/css">
+	
+	div#listingPageId input {
+		
+		border: 1px solid #25AD9F;
+    	font-size: 14px;
+    	font-weight: bold;
+    	
+	}
+		
+div.row  .dropdown-menu {
+	min-width: 96%;
+}
+
+.listing-wrapper {
+ padding-top:20px;
+width: 80%;
+margin: 0 auto;
+ 
+}
+	</style>
+	
+	<div class="col-md-2">
+			<!-- HELL -->
+		</div>
+		
+		<div class="row hidden-sm hidden-md hidden-lg clearFix append_bottomHalf shadow_genrator_1 listing_div">
+		<div ng-show="inlineSearchWidget">
+	        	    <div class="col-xs-4">{{truncateLength(selectedActivity.activityName)}}</div>
+	        	    <div class="col-xs-4">{{truncateLength(selectedCity.city)}}</div>
+	        	    <div class="col-xs-4">
+	        	    	{{truncateLength(selectedLocation.street)}}
+	        	    	<![CDATA[
+								<a ng-click="inlineSearchWidget=false;" href="#" class="flR cross_icon" ng-show="inlineSearchWidget" slide-down>
+		
+									<img src="/static/images/plus-icon.png" style="width:30px"/>
+	        					</a>
+	        					]]>
+	        	    </div>
+	       </div> 
+	     </div>
+	     				
+		<div id="searchWidgetId" class="col-md-6" ng-hide="inlineSearchWidget">
+		<![CDATA[
+		<a ng-click="inlineSearchWidget=true;" href="#" class="flR cross_icon hidden-xs hidden-sm hidden-md hidden-lg" style="position:absolute; z-index:1000;" slide-up>
+		
+									<img src="/static/images/profiles/../cross_icon.gif"/>
+	        					</a>
+	        					]]>
+	        	
+	     
+			   <div class="row">
+						<!--  
+						<div class="col-md-3" ng-if="!showCategoryDropdown &amp;&amp; !isCategoryInStore()">
+							<button class="btn btn-primary" ng-click="setCategoryDropdown()">Select a Category</button>
+						</div>
+						<div class="col-md-3" ng-if="!showCategoryDropdown &amp;&amp; isCategoryInStore()">
+							<button class="btn btn-primary" ng-click="setCategoryDropdown()">{{selectedCategory}}</button>
+						</div>
+						<div class="col-md-3" ng-show="showCategoryDropdown">
+							<select class="form-control valid" data-ng-options="o as o for o in categoryList" data-ng-model="selectedCategory" ng-change="categoryChange();clearActivitySearchBox();clearLocationSearchBox();">&#160;</select>
+						</div> -->
+							<script type="text/ng-template" id="customTemplate.html">
+  							<a>	
+								 <i class="icon-{{match.model.activityName}}">&#160;</i> 
+      							<span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+  							</a>
+						</script>
+						<div class="col-md-5"  style="padding-top: 3px;">
+							<input class="form-control" tabindex="1" id="sportinput" placeholder="Search Activity:" type="text" 
+							ng-model="selectedActivity" 
+							typeahead-template-url="customTemplate.html" 
+							typeahead-on-select="showActivity(selectedActivity);clearLocationSearchBox();" 
+							typeahead="state as state.activityName for state in activityList | filter:{activityName: $viewValue} | filter:$viewValue:startsWith | limitTo:5" />
+						</div>
+						<div class="col-md-7" style="padding-top: 3px;">
+				           <input type="text" tabindex="2" placeholder="Start typing a location:" 
+				                 typeahead="location as label(location) for location in getLocation($viewValue) | limitTo:10" 
+				                 typeahead-min-length = "3" 
+				                 typeahead-on-select="loadListingResultsNew( $item, $model, $label)"
+				                 ng-model="userselectedlocation" 
+				                 class="form-control"/>
+						</div>
+						<!-- 
+			  			<div class="col-md-3">
+							<input class="form-control"
+						          	tabindex="2" id="cityinput" placeholder="Select city:" type="text" 
+						          	ng-model="selectedCity" 
+						          	typeahead-on-select="showSelectedValue(selectedActivity,selectedCity);clearLocationSearchBox();" 
+						          	typeahead="cityObj as cityObj.city for cityObj in cityList | filter:{city: $viewValue} | limitTo:5" 
+						       />  
+						</div>
+						<div class="col-md-3">
+						    <div class="">
+						      <input class="form-control" tabindex="2" id="regioninput" placeholder="Search Any Area:"  type="text" 
+						      ng-model="selectedLocation" 
+						      typeahead-on-select="showLocation(selectedLocation);loadListingResults(selectedActivity,selectedLocation,selectedCity,true)" 
+						      typeahead="location as location.street for location in activityToRegionList | filter:{street: $viewValue} | limitTo:5" />
+						     
+						    </div> 
+						</div>  
+						
+						-->
+						
+				</div>
+		
+		</div>			
+		
+
+
+</jsp:root>

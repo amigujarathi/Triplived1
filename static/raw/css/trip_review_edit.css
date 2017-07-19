@@ -1,0 +1,26 @@
+.sui-gridheader .sui-headercell {
+  text-align: center;
+}
+
+.sui-grid-core {
+  font-family: Arial, sans-serif;
+}
+
+.sui-button-cell {
+  text-align: center;
+}
+
+.sui-checkbox {
+  font-size: 17px !important;
+  padding-bottom: 4px !important;
+}
+
+.deleteButton img {
+  margin-right: 3px;
+  vertical-align: bottom;
+}
+
+.bigicon {
+  color: #5CB85C;
+  font-size: 20px;
+}

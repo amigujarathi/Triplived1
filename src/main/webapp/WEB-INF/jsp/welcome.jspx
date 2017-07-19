@@ -1,0 +1,50 @@
+<jsp:root
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:tiles="http://tiles.apache.org/tags-tiles" version="2.0">
+
+	<jsp:directive.page isELIgnored="false" />
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" /> 
+	
+	<spring:url value="/static/js" var="url" />
+	<spring:url value="/static/css" var="css_url" />
+	
+	<link rel="stylesheet" href="${css_url}/connect.css?v=2" > <!-- css --> </link>
+	<link rel="stylesheet" href="${css_url}/twiter/bootstrap.css?v=1" > <!-- css --> </link> 
+	
+	    
+	
+ 		 
+<!-- 	
+
+http://graph.facebook.com/shaverm/picture?width=200&height=200
+
+	<div id="topsearch">
+			<div><span class="label"> Persons: </span> <input type="text" class="typeahead" id="persons" name="persons" /></div>
+			<div style="padding-top:10px"><span class="label"> Interest: </span><input type="text" class="typeahead" id="interests" name="interests" /></div>
+			<div style="padding-top:10px"><span class="label"> Search </span><input type="text" class="typeahead" id="fakenlp" name="fakenlp" /></div>
+		</div>
+		
+		<div class="row">
+  <div class="col-lg-3">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/100%x180" alt="">
+    </a>
+  </div>
+  ...
+</div>
+		
+		
+ -->
+  
+	<script src="${url}/jquery/jquery-1.10.0.js"><!-- script --></script>
+	<script src="${url}/jquery/jquery.ui.core.min.js"><!-- script --></script>
+	<script src="${url}/twiter/js/bootstrap.js"><!-- script --></script>
+	<script src="${url}/facebook/login.js"><!-- script --></script>  
+	
+	 
+	
+</jsp:root>
+ 

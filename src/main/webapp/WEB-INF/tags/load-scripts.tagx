@@ -1,0 +1,182 @@
+<jsp:root xmlns:c="http://java.sun.com/jsp/jstl/core" 
+		xmlns:fn="http://java.sun.com/jsp/jstl/functions" 
+		xmlns:jsp="http://java.sun.com/JSP/Page" 
+		xmlns:tiles="http://tiles.apache.org/tags-tiles" 
+		xmlns:spring="http://www.springframework.org/tags" version="2.0">
+  <jsp:output omit-xml-declaration="yes" />
+ 
+ 
+  <c:set value="/static/m/css/interestify-bootstrap.css?v=1.2" var="interestify_bootstrap" />
+  <c:set value="/static/m/interestify-glyphicons.min.css?v=1.2" var="interestify_glyphicons" />
+  <c:set value="/static/styles/screen.css?v=1.1" var="interestify_screen_css" />
+  <c:set value="/static/raw/css/interestify.css?v=5.1" var="interestify_css" />
+
+  <c:set value="/static/glyphter-font/css/Glyphter.css?v=5.2" var="icons_css" />
+
+  <link rel="stylesheet" type="text/css" href="/static/raw/css/common.css?v=1.1" />
+  <link rel="stylesheet" type="text/css" href="/static/css/connect.css?v=2.1" />
+  
+  <link rel="stylesheet" type="text/css" href="${icons_css}"/>
+  
+  
+	 <c:choose>
+		<c:when test="${pageType == 'static'}">
+			<!-- static css -->
+		</c:when>
+		
+		<c:when test="${pageType == 'homePage'}">
+	   		 <!-- homePage -->
+	   		<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+	   		<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+		</c:when>
+
+		<c:when test="${pageType == 'messages'}">
+			<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+   			<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+			
+			<link rel="stylesheet" type="text/css" href="${styles_url}/jquery.datetimepicker.css?v=1.1"/>
+		</c:when>
+		
+		<c:when test="${pageType == 'event'}">
+			<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+   			<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+			
+			<link rel="stylesheet" type="text/css" href="${styles_url}/jquery.datetimepicker.css?v=1.1"/>
+		</c:when>
+		
+		<c:when test="${pageType == 'profile'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+      		    
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+			<c:when test="${pageType == 'staticAttraction' or pageType == 'staticAttractionUpload'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		    
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'staticAttractionAdd'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/common_add.css?v=1.1" />
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'addNewHotel'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/common_add.css?v=1.1" />
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'jsonEditor'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/common_add.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/jsoneditor.min.css" />
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'tripVideo'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/common_add.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/jsoneditor.min.css" />
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+			<c:when test="${pageType == 'tripReview'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/common_add.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/trip_review_edit.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/shield-ui.min.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/jsoneditor.min.css" />
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'tripEntityCuration'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/common_add.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/trip_review_edit.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/shield-ui.min.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/jsoneditor.min.css" />
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'tripAdminReview'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/common_add.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/trip_review_edit.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/123941/shield-ui.min.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/jsoneditor.min.css" />
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'tripentitydisplay'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/common_add.css?v=1.1" />
+      		     <link rel="stylesheet" type="text/css" href="/static/raw/css/jsoneditor.min.css" />
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'staticHotel'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		    
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'staticCity'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		    
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		<c:when test="${pageType == 'cityImageUpload'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		    
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		
+		<c:when test="${pageType == 'staticTrip'}">
+				<link rel="stylesheet" type="text/css" href="${interestify_screen_css}"/>
+				<link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+				<link rel="stylesheet" type="text/css"	href="/static/css/jquery/jquery.datetimepicker.css" />
+      		    
+      		    <link rel="stylesheet" href="${minified_url}/css/extended.min.css?v=1" />
+		</c:when>
+		
+		
+		
+		
+		<c:when test="${pageType == 'person'}">
+			    <link rel="stylesheet" type="text/css"	href="${interestify_css}" />
+		</c:when>
+	</c:choose>
+
+		<link rel="stylesheet" type="text/css"	href="${interestify_bootstrap}" />
+        <link rel="stylesheet" type="text/css"	href="${interestify_glyphicons}" />
+         
+ </jsp:root>

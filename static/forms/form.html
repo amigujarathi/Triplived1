@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Static Itenary Collection Form</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+<script type="text/javascript" src="calendar.js"></script>
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>Static Itenary Collection Form</a></h1>
+		<form id="form_994610" class="appnitro" enctype="multipart/form-data" method="post" action="">
+					<div class="form_description">
+			<h2>Static Itenary Collection Form</h2>
+			<p>This is your form description. Click here to edit.</p>
+		</div>						
+			<ul >
+			
+					<li id="li_7" >
+		<label class="description" for="element_7">Name </label>
+		<span>
+			<input id="element_7_1" name= "element_7_1" class="element text" maxlength="255" size="8" value=""/>
+			<label>First</label>
+		</span>
+		<span>
+			<input id="element_7_2" name= "element_7_2" class="element text" maxlength="255" size="14" value=""/>
+			<label>Last</label>
+		</span> 
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">Email </label>
+		<div>
+			<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div><p class="guidelines" id="guide_2"><small>Please Enter Email</small></p> 
+		</li>		<li id="li_6" >
+		<label class="description" for="element_6">Gender </label>
+		<div>
+		<select class="element select medium" id="element_6" name="element_6"> 
+			<option value="" selected="selected"></option>
+<option value="1" >Male</option>
+<option value="2" >Female</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">Phone Number </label>
+		<div>
+			<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div><p class="guidelines" id="guide_3"><small>Please enter your mobiel Number</small></p> 
+		</li>		<li id="li_4" >
+		<label class="description" for="element_4">Current City </label>
+		<div>
+			<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_5" >
+		<label class="description" for="element_5">About Your self </label>
+		<div>
+			<textarea id="element_5" name="element_5" class="element textarea small"></textarea> 
+		</div><p class="guidelines" id="guide_5"><small>A brief description about yourself</small></p> 
+		</li>		<li class="section_break">
+			<h3>Section Break</h3>
+			<p></p>
+		</li>		<li id="li_9" >
+		<label class="description" for="element_9">Departure City </label>
+		<div>
+			<input id="element_9" name="element_9" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_14" >
+		<label class="description" for="element_14">Date </label>
+		<span>
+			<input id="element_14_1" name="element_14_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_14_1">MM</label>
+		</span>
+		<span>
+			<input id="element_14_2" name="element_14_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_14_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_14_3" name="element_14_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_14_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_14">
+			<img id="cal_img_14" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_14_3",
+			baseField    : "element_14",
+			displayArea  : "calendar_14",
+			button		 : "cal_img_14",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_15" >
+		<label class="description" for="element_15">Time </label>
+		<span>
+			<input id="element_15_1" name="element_15_1" class="element text " size="2" type="text" maxlength="2" value=""/> : 
+			<label>HH</label>
+		</span>
+		<span>
+			<input id="element_15_2" name="element_15_2" class="element text " size="2" type="text" maxlength="2" value=""/> : 
+			<label>MM</label>
+		</span>
+		<span>
+			<input id="element_15_3" name="element_15_3" class="element text " size="2" type="text" maxlength="2" value=""/>
+			<label>SS</label>
+		</span>
+		<span>
+			<select class="element select" style="width:4em" id="element_15_4" name="element_15_4">
+				<option value="AM" >AM</option>
+				<option value="PM" >PM</option>
+			</select>
+			<label>AM/PM</label>
+		</span> 
+		</li>		<li id="li_37" >
+		<label class="description" for="element_37">Mode of Transport </label>
+		<span>
+			<input id="element_37_1" name="element_37_1" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_37_1">Car</label>
+<input id="element_37_2" name="element_37_2" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_37_2">Bus</label>
+<input id="element_37_3" name="element_37_3" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_37_3">Train</label>
+<input id="element_37_4" name="element_37_4" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_37_4">Flight</label>
+<input id="element_37_5" name="element_37_5" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_37_5">Bike</label>
+<input id="element_37_6" name="element_37_6" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_37_6">Trek</label>
+
+		</span> 
+		</li>		<li id="li_10" >
+		<label class="description" for="element_10">Upload Pictures </label>
+		<div>
+			<input id="element_10" name="element_10" class="element file" type="file"/> 
+		</div>  
+		</li>		<li id="li_11" >
+		<label class="description" for="element_11">Add Hotel </label>
+		<div>
+			<input id="element_11" name="element_11" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_12" >
+		<label class="description" for="element_12">Add Destination City 1 </label>
+		<div>
+			<input id="element_12" name="element_12" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_13" >
+		<label class="description" for="element_13">Date Reached </label>
+		<span>
+			<input id="element_13_1" name="element_13_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_13_1">MM</label>
+		</span>
+		<span>
+			<input id="element_13_2" name="element_13_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_13_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_13_3" name="element_13_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_13_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_13">
+			<img id="cal_img_13" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_13_3",
+			baseField    : "element_13",
+			displayArea  : "calendar_13",
+			button		 : "cal_img_13",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_16" >
+		<label class="description" for="element_16"> Reached </label>
+		<span>
+			<input id="element_16_1" name="element_16_1" class="element text " size="2" type="text" maxlength="2" value=""/> : 
+			<label>HH</label>
+		</span>
+		<span>
+			<input id="element_16_2" name="element_16_2" class="element text " size="2" type="text" maxlength="2" value=""/> : 
+			<label>MM</label>
+		</span>
+		<span>
+			<input id="element_16_3" name="element_16_3" class="element text " size="2" type="text" maxlength="2" value=""/>
+			<label>SS</label>
+		</span>
+		<span>
+			<select class="element select" style="width:4em" id="element_16_4" name="element_16_4">
+				<option value="AM" >AM</option>
+				<option value="PM" >PM</option>
+			</select>
+			<label>AM/PM</label>
+		</span> 
+		</li>		<li id="li_17" >
+		<label class="description" for="element_17">Attractions Visited </label>
+		<div>
+			<input id="element_17" name="element_17" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_18" >
+		<label class="description" for="element_18">Restaurants Visited </label>
+		<div>
+			<input id="element_18" name="element_18" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_19" >
+		<label class="description" for="element_19">Activities Done </label>
+		<div>
+			<input id="element_19" name="element_19" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_20" >
+		<label class="description" for="element_20">Upload Pictures </label>
+		<div>
+			<input id="element_20" name="element_20" class="element file" type="file"/> 
+		</div>  
+		</li>		<li class="section_break">
+			<h3>Section Break</h3>
+			<p></p>
+		</li>		<li id="li_22" >
+		<label class="description" for="element_22">Your Trip Will be saved as  </label>
+		<div>
+			<input id="element_22" name="element_22" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_23" >
+		<label class="description" for="element_23">Trip Caption </label>
+		<div>
+			<input id="element_23" name="element_23" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_38" >
+		<label class="description" for="element_38">Checkboxes </label>
+		<span>
+			<input id="element_38_1" name="element_38_1" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_38_1">HoneyMoon</label>
+<input id="element_38_2" name="element_38_2" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_38_2">Adventurous</label>
+<input id="element_38_3" name="element_38_3" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_38_3">Family</label>
+<input id="element_38_4" name="element_38_4" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_38_4">Friends</label>
+<input id="element_38_5" name="element_38_5" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_38_5">Religious</label>
+<input id="element_38_6" name="element_38_6" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_38_6">Business</label>
+<input id="element_38_7" name="element_38_7" class="element checkbox" type="checkbox" value="1" checked="checked"/>
+<label class="choice" for="element_38_7">Other</label>
+
+		</span> 
+		</li>		<li class="section_break">
+			<h3>Section Break</h3>
+			<p></p>
+		</li>		<li id="li_25" >
+		<label class="description" for="element_25">Number of Passangers </label>
+		<div>
+			<input id="element_25" name="element_25" class="element text small" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li class="section_break">
+			<h3>Section Break</h3>
+			<p></p>
+		</li>		<li id="li_27" >
+		<label class="description" for="element_27">Hotel Name </label>
+		<div>
+			<input id="element_27" name="element_27" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_28" >
+		<label class="description" for="element_28">Check In Date </label>
+		<span>
+			<input id="element_28_1" name="element_28_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_28_1">MM</label>
+		</span>
+		<span>
+			<input id="element_28_2" name="element_28_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_28_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_28_3" name="element_28_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_28_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_28">
+			<img id="cal_img_28" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_28_3",
+			baseField    : "element_28",
+			displayArea  : "calendar_28",
+			button		 : "cal_img_28",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_29" >
+		<label class="description" for="element_29">Check Out Date </label>
+		<span>
+			<input id="element_29_1" name="element_29_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_29_1">MM</label>
+		</span>
+		<span>
+			<input id="element_29_2" name="element_29_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_29_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_29_3" name="element_29_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_29_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_29">
+			<img id="cal_img_29" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_29_3",
+			baseField    : "element_29",
+			displayArea  : "calendar_29",
+			button		 : "cal_img_29",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_31" >
+		<label class="description" for="element_31">Your Hotel Photos </label>
+		<div>
+			<input id="element_31" name="element_31" class="element file" type="file"/> 
+		</div>  
+		</li>		<li id="li_39" >
+		<label class="description" for="element_39">Hotel Rating: should be star </label>
+		<span>
+			<input id="element_39_1" name="element_39" class="element radio" type="radio" value="1" />
+<label class="choice" for="element_39_1">Food</label>
+<input id="element_39_2" name="element_39" class="element radio" type="radio" value="2" />
+<label class="choice" for="element_39_2">Location</label>
+<input id="element_39_3" name="element_39" class="element radio" type="radio" value="3" />
+<label class="choice" for="element_39_3">Room service</label>
+<input id="element_39_4" name="element_39" class="element radio" type="radio" value="4" />
+<label class="choice" for="element_39_4">Amenities</label>
+<input id="element_39_5" name="element_39" class="element radio" type="radio" value="5" />
+<label class="choice" for="element_39_5">Internet</label>
+<input id="element_39_6" name="element_39" class="element radio" type="radio" value="6" />
+<label class="choice" for="element_39_6">Overall Experience</label>
+
+		</span> 
+		</li>		<li id="li_30" >
+		<label class="description" for="element_30">Your Experience About Hotel </label>
+		<div>
+			<textarea id="element_30" name="element_30" class="element textarea medium"></textarea> 
+		</div> 
+		</li>		<li class="section_break">
+			<h3>Section Break</h3>
+			<p></p>
+		</li>		<li id="li_33" >
+		<label class="description" for="element_33">Attraction Name </label>
+		<div>
+			<input id="element_33" name="element_33" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_34" >
+		<label class="description" for="element_34">Date Visited </label>
+		<span>
+			<input id="element_34_1" name="element_34_1" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_34_1">MM</label>
+		</span>
+		<span>
+			<input id="element_34_2" name="element_34_2" class="element text" size="2" maxlength="2" value="" type="text"> /
+			<label for="element_34_2">DD</label>
+		</span>
+		<span>
+	 		<input id="element_34_3" name="element_34_3" class="element text" size="4" maxlength="4" value="" type="text">
+			<label for="element_34_3">YYYY</label>
+		</span>
+	
+		<span id="calendar_34">
+			<img id="cal_img_34" class="datepicker" src="calendar.gif" alt="Pick a date.">	
+		</span>
+		<script type="text/javascript">
+			Calendar.setup({
+			inputField	 : "element_34_3",
+			baseField    : "element_34",
+			displayArea  : "calendar_34",
+			button		 : "cal_img_34",
+			ifFormat	 : "%B %e, %Y",
+			onSelect	 : selectDate
+			});
+		</script>
+		 
+		</li>		<li id="li_35" >
+		<label class="description" for="element_35">Time Visited </label>
+		<span>
+			<input id="element_35_1" name="element_35_1" class="element text " size="2" type="text" maxlength="2" value=""/> : 
+			<label>HH</label>
+		</span>
+		<span>
+			<input id="element_35_2" name="element_35_2" class="element text " size="2" type="text" maxlength="2" value=""/> : 
+			<label>MM</label>
+		</span>
+		<span>
+			<input id="element_35_3" name="element_35_3" class="element text " size="2" type="text" maxlength="2" value=""/>
+			<label>SS</label>
+		</span>
+		<span>
+			<select class="element select" style="width:4em" id="element_35_4" name="element_35_4">
+				<option value="AM" >AM</option>
+				<option value="PM" >PM</option>
+			</select>
+			<label>AM/PM</label>
+		</span> 
+		</li>		<li id="li_40" >
+		<label class="description" for="element_40">Rating </label>
+		<span>
+			<input id="element_40_1" name="element_40_1" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_40_1">Would Your Recommend</label>
+<input id="element_40_2" name="element_40_2" class="element checkbox" type="checkbox" value="1" />
+<label class="choice" for="element_40_2">Your overall Experience</label>
+
+		</span> 
+		</li>		<li id="li_36" >
+		<label class="description" for="element_36">Share Some Experience  </label>
+		<div>
+			<textarea id="element_36" name="element_36" class="element textarea small"></textarea> 
+		</div> 
+		</li>
+			
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="994610" />
+			    
+				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+		</li>
+			</ul>
+		</form>	
+		<div id="footer">
+			Generated by <a href="http://www.phpform.org">pForm</a>
+		</div>
+	</div>
+	<img id="bottom" src="bottom.png" alt="">
+	</body>
+</html>

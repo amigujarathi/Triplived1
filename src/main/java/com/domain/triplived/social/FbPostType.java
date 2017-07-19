@@ -1,0 +1,25 @@
+package com.domain.triplived.social;
+
+public enum FbPostType {
+
+	ENTITY_CHECK_IN_WITH_IMAGES("ENTITY_CHECK_IN_WITH_IMAGES"),
+	CUSTOM_CHECK_IN_WITH_IMAGES("CUSTOM_CHECK_IN_WITH_IMAGES"),
+	ENTITY_CHECK_IN_WITHOUT_IMAGES("ENTITY_CHECK_IN_WITHOUT_IMAGES"),
+	CUSTOM_CHECK_IN_WITHOUT_IMAGES("CUSTOM_CHECK_IN_WITHOUT_IMAGES"),
+	ONLY_IMAGES("ONLY_IMAGES"),
+	ONLY_MESSAGE_OR_EMOTION("ONLY_MESSAGE_OR_EMOTION");
+	
+	
+	String type;
+	
+	public String getType() {
+		return type;
+	}
+	
+	FbPostType(String type){
+		
+		this.type = type;
+	}
+	
+}
+
